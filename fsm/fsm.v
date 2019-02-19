@@ -10,7 +10,7 @@ module fsm(
 	input[16:0] length;
 	output reg enable, clr;
 	
-	reg[4:0] current_state, next_state;
+	reg[3:0] current_state, next_state;
 	reg[16:0] length_counter;
 	
 	initial begin
@@ -23,23 +23,27 @@ module fsm(
 	parameter WAIT = 1;
 	parameter ENCODE = 2;
 	parameter TERMINATE = 3;
-	parameter BUFFER = 4;
+	parameter BUFFER = 7;
 	
 	always @(reset) begin
 		enable <= 0;
 		clr <= 0;
 		length_counter <= 0;
+		current_state <= INIT;
+		next_state <= INIT;
 	end
 	
 	always @(posedge clk) begin
 		case (current_state)
 			INIT: begin
 					clr <= 1;
+					enable <= 0;
 					next_state <= WAIT;
 					current_state <= BUFFER;
 					end
 			WAIT: begin
 					clr <= 1;
+					enable <= 0;
 					next_state <= WAIT;
 					current_state <= BUFFER;
 					end

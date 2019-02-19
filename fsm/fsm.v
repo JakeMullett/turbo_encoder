@@ -50,6 +50,7 @@ module fsm(
 						length_counter <= length_counter + 1;
 					end else begin
 						length_counter <= 0;
+						enable <= 0;
 						next_state <= TERMINATE;
 						current_state <= BUFFER;
 					end

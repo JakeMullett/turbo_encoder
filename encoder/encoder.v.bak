@@ -1,0 +1,6 @@
+`timescale 1 ps / 1 ps
+module encoder (clr, enable, u, Xk, Zk, Zprimek);
+
+input clr, enable, u;
+output [15:0] Xk, Zk, Zprimek;
+

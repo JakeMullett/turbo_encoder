@@ -71,6 +71,7 @@ module fsm(
 							enable <= 0;
 							trellis_enable <= 0;
 							current_state <= WAIT;
+							clr <= 1;
 						end
 						end
 				BUFFER: begin

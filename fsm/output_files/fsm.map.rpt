@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fsm
-Mon Mar 04 20:38:18 2019
+Tue Mar 05 15:36:51 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -14,13 +14,12 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |fsm
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |fsm
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +46,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 04 20:38:17 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 05 15:36:51 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; fsm                                         ;
 ; Top-level Entity Name              ; fsm                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 43                                          ;
-;     Total combinational functions  ; 43                                          ;
-;     Dedicated logic registers      ; 13                                          ;
-; Total registers                    ; 13                                          ;
-; Total pins                         ; 18                                          ;
+; Total logic elements               ; 49                                          ;
+;     Total combinational functions  ; 49                                          ;
+;     Dedicated logic registers      ; 20                                          ;
+; Total registers                    ; 20                                          ;
+; Total pins                         ; 11                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -177,36 +176,36 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                         ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Estimated Total logic elements              ; 43                    ;
-;                                             ;                       ;
-; Total combinational functions               ; 43                    ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 22                    ;
-;     -- 3 input functions                    ; 10                    ;
-;     -- <=2 input functions                  ; 11                    ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 27                    ;
-;     -- arithmetic mode                      ; 16                    ;
-;                                             ;                       ;
-; Total registers                             ; 13                    ;
-;     -- Dedicated logic registers            ; 13                    ;
-;     -- I/O registers                        ; 0                     ;
-;                                             ;                       ;
-; I/O pins                                    ; 18                    ;
-;                                             ;                       ;
-; Embedded Multiplier 9-bit elements          ; 0                     ;
-;                                             ;                       ;
-; Maximum fan-out node                        ; current_state[1]~reg0 ;
-; Maximum fan-out                             ; 18                    ;
-; Total fan-out                               ; 196                   ;
-; Average fan-out                             ; 2.13                  ;
-+---------------------------------------------+-----------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 49        ;
+;                                             ;           ;
+; Total combinational functions               ; 49        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 25        ;
+;     -- 3 input functions                    ; 5         ;
+;     -- <=2 input functions                  ; 19        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 36        ;
+;     -- arithmetic mode                      ; 13        ;
+;                                             ;           ;
+; Total registers                             ; 20        ;
+;     -- Dedicated logic registers            ; 20        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 11        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 20        ;
+; Total fan-out                               ; 237       ;
+; Average fan-out                             ; 2.60      ;
++---------------------------------------------+-----------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -214,7 +213,7 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |fsm                       ; 43 (43)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |fsm                ; fsm         ; work         ;
+; |fsm                       ; 49 (49)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |fsm                ; fsm         ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -224,21 +223,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; next_state[0..2]                      ; Stuck at GND due to stuck port data_in ;
-; clr~reg0                              ; Stuck at GND due to stuck port data_in ;
 ; current_state[2]~reg0                 ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5 ;                                        ;
+; Total Number of Removed Registers = 1 ;                                        ;
 +---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; next_state[2] ; Stuck at GND              ; current_state[2]~reg0                  ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -246,12 +233,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 13    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 20    ;
+; Number of registers using Synchronous Clear  ; 14    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Clock Enable       ; 14    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -262,7 +249,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; 12:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fsm|current_state[0]~reg0 ;
-; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fsm|length_counter[8]     ;
+; 12:1               ; 14 bits   ; 112 LEs       ; 14 LEs               ; 98 LEs                 ; Yes        ; |fsm|length_counter[13]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -271,11 +258,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; INIT           ; 1     ; Signed Integer                             ;
 ; WAIT           ; 0     ; Signed Integer                             ;
 ; ENCODE         ; 3     ; Signed Integer                             ;
 ; TERMINATE      ; 2     ; Signed Integer                             ;
-; BUFFER         ; 7     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -285,23 +270,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 18                          ;
-; cycloneiii_ff         ; 13                          ;
-;     ENA               ; 9                           ;
-;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 44                          ;
-;     arith             ; 16                          ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 8                           ;
-;     normal            ; 28                          ;
+; boundary_port         ; 11                          ;
+; cycloneiii_ff         ; 20                          ;
+;     ENA SCLR          ; 14                          ;
+;     plain             ; 6                           ;
+; cycloneiii_lcell_comb ; 50                          ;
+;     arith             ; 13                          ;
+;         2 data inputs ; 13                          ;
+;     normal            ; 37                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 22                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 25                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.80                        ;
-; Average LUT depth     ; 3.55                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -310,7 +294,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -320,7 +304,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Mar 04 20:37:57 2019
+    Info: Processing started: Tue Mar 05 15:36:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fsm -c fsm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -328,28 +312,26 @@ Warning (12019): Can't analyze file -- file fsm_vhd.vhd is missing
 Warning (12125): Using design file fsm.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: fsm File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 1
 Info (12127): Elaborating entity "fsm" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at fsm.v(27): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 27
-Warning (10230): Verilog HDL assignment warning at fsm.v(35): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 35
-Warning (10230): Verilog HDL assignment warning at fsm.v(36): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 36
-Warning (10230): Verilog HDL assignment warning at fsm.v(52): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 52
-Warning (10230): Verilog HDL assignment warning at fsm.v(58): truncated value with size 32 to match size of target (9) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 58
-Warning (10230): Verilog HDL assignment warning at fsm.v(63): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 63
-Warning (10230): Verilog HDL assignment warning at fsm.v(68): truncated value with size 32 to match size of target (9) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 68
-Warning (10230): Verilog HDL assignment warning at fsm.v(73): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 73
+Warning (10230): Verilog HDL assignment warning at fsm.v(28): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 28
+Warning (10230): Verilog HDL assignment warning at fsm.v(37): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 37
+Warning (10230): Verilog HDL assignment warning at fsm.v(48): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 48
+Warning (10230): Verilog HDL assignment warning at fsm.v(54): truncated value with size 32 to match size of target (14) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 54
+Warning (10230): Verilog HDL assignment warning at fsm.v(60): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 60
+Warning (10230): Verilog HDL assignment warning at fsm.v(70): truncated value with size 32 to match size of target (14) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 70
+Warning (10230): Verilog HDL assignment warning at fsm.v(75): truncated value with size 32 to match size of target (3) File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 75
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "current_state[2]" is stuck at GND File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 32
-    Warning (13410): Pin "clr" is stuck at GND File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 13
+    Warning (13410): Pin "current_state[2]" is stuck at GND File: D:/quartus/ece559/turbo_encoder/fsm/fsm.v Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 43 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 5011 megabytes
-    Info: Processing ended: Mon Mar 04 20:38:18 2019
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:31
+Info (21057): Implemented 60 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 49 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 5012 megabytes
+    Info: Processing ended: Tue Mar 05 15:36:51 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
 
 

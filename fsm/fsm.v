@@ -6,10 +6,11 @@ module fsm(
 	enable,
 	trellis_enable,
 	current_state,
+	switch,
 	clr);
 	
 	input data_valid, reset, clk, length_flag;
-	output reg enable, clr, trellis_enable;
+	output reg enable, clr, trellis_enable, switch;
 	
 	output reg[2:0] current_state;
 	reg[13:0] length_counter;
@@ -27,6 +28,7 @@ module fsm(
 		current_state <= WAIT;
 		enable <= 0;
 		trellis_enable <= 0;
+		switch <= 0;
 	end
 	
 	always @(posedge clk) begin
@@ -35,6 +37,8 @@ module fsm(
 			current_state <= WAIT;
 			enable <= 0;
 			trellis_enable <= 0;
+			switch <= 0;
+			clr <= 1;
 		end else begin
 			case (current_state)
 				WAIT: begin
@@ -54,11 +58,13 @@ module fsm(
 							trellis_enable <= 1;
 							clr <= 1;
 							current_state <= TERMINATE;
+							switch <= 1;
 						end
 						end
 				TERMINATE: begin
 						if (length_counter == 1) begin
-							clr <= 0;
+							switch <= 0;
+							clr <= 1;
 						end
 						if (length_counter < 4) begin
 							length_counter <= length_counter + 1;

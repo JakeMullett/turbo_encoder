@@ -62,13 +62,11 @@ module fsm(
 						end
 						end
 				TERMINATE: begin
-						if (length_counter == 1) begin
-							switch <= 0;
-							clr <= 1;
-						end
 						if (length_counter < 4) begin
 							length_counter <= length_counter + 1;
 						end else begin
+							clr <= 0;
+							switch <= 0;
 							length_counter <= 0;
 							enable <= 0;
 							trellis_enable <= 0;

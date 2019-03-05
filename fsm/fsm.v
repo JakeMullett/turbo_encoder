@@ -4,73 +4,84 @@ module fsm(
 	clk,
 	length,
 	enable,
+	trellis_enable,
+	current_state,
 	clr);
 	
 	input data_valid, reset, clk;
-	input[16:0] length;
-	output reg enable, clr;
+	input[8:0] length;
+	output reg enable, clr, trellis_enable;
 	
-	reg[3:0] current_state, next_state;
-	reg[16:0] length_counter;
+	output reg[2:0] current_state;
+	reg[2:0] next_state;
+	reg[8:0] length_counter;
 	
-	initial begin
-		enable <= 0;
-		clr <= 0;
-		length_counter <= 0;
-	end
-	
-	parameter INIT = 0;
-	parameter WAIT = 1;
-	parameter ENCODE = 2;
-	parameter TERMINATE = 3;
+	parameter INIT = 1;
+	parameter WAIT = 0;
+	parameter ENCODE = 3;
+	parameter TERMINATE = 2;
 	parameter BUFFER = 7;
 	
-	always @(reset) begin
-		enable <= 0;
-		clr <= 0;
+	initial begin
 		length_counter <= 0;
-		current_state <= INIT;
-		next_state <= INIT;
+		current_state <= WAIT;
+		length_counter <= 0;
+		enable <= 0;
 	end
 	
 	always @(posedge clk) begin
-		case (current_state)
-			INIT: begin
-					clr <= 1;
-					enable <= 0;
-					next_state <= WAIT;
-					current_state <= BUFFER;
-					end
-			WAIT: begin
-					clr <= 1;
-					enable <= 0;
-					next_state <= WAIT;
-					current_state <= BUFFER;
-					end
-			ENCODE: begin
-					clr <= 0;
-					enable <= 1;
-					if (length_counter < length) begin
-						length_counter <= length_counter + 1;
-					end else begin
-						length_counter <= 0;
-						enable <= 0;
-						next_state <= TERMINATE;
-						current_state <= BUFFER;
-					end
-					
-					end
-			TERMINATE: begin
-					enable <= 0;
-					clr <= 0;
-					next_state <= INIT;
-					current_state <= BUFFER;
-					end
-			BUFFER: begin
-					current_state <= next_state;
-					end
-		endcase
+		if (reset) begin
+			length_counter <= 0;
+			current_state <= WAIT;
+			next_state <= WAIT;
+			length_counter <= 0;
+			enable <= 0;
+		end else begin
+			case (current_state)
+//				INIT: begin
+//						clr <= 1;
+//						enable <= 0;
+//						trellis_enable <= 0;
+//						next_state <= WAIT;
+//						current_state <= BUFFER;
+//						end
+				WAIT: begin
+						if (data_valid) begin
+							clr <= 0;
+							enable <= 1;
+							current_state <= ENCODE;
+							length_counter <= 0; //because buffer state 1 clock
+						end
+						end
+				ENCODE: begin
+						if (length_counter < length) begin
+							length_counter <= length_counter + 1;
+						end else begin
+							length_counter <= 0;
+							enable <= 0;
+							trellis_enable <= 1;
+							current_state <= TERMINATE;
+						end
+						end
+				TERMINATE: begin
+						if (length_counter < 4) begin
+							length_counter <= length_counter + 1;
+						end else begin
+							length_counter <= 0;
+							enable <= 0;
+							trellis_enable <= 0;
+							current_state <= WAIT;
+						end
+						end
+				BUFFER: begin
+						current_state <= next_state;
+						end
+			endcase
+		end
 	end
-	
+//	
+//	assign clr = current_state == WAIT;
+//	and enand(enable, current_state[0], current_state[1]);
+//	assign trellis_enable = current_state == TERMINATE;
 	
 endmodule

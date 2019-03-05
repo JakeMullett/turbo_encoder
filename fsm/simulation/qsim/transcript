@@ -1,0 +1,43 @@
+# do fsm.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:43:39 on Mar 04,2019
+# vlog -work work fsm.vo 
+# -- Compiling module fsm
+# 
+# Top level modules:
+# 	fsm
+# End time: 20:43:39 on Mar 04,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:43:40 on Mar 04,2019
+# vlog -work work testWaveform.vwf.vt 
+# -- Compiling module fsm_vlg_vec_tst
+# 
+# Top level modules:
+# 	fsm_vlg_vec_tst
+# End time: 20:43:40 on Mar 04,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.fsm_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 20:43:40 on Mar 04,2019
+# Loading work.fsm_vlg_vec_tst
+# Loading work.fsm
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# SDF 10.4d Compiler 2015.12 Dec 30 2015
+# 
+# Loading instances from fsm_v.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from fsm_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /fsm_vlg_vec_tst File: testWaveform.vwf.vt
+# ** Note: $finish    : testWaveform.vwf.vt(57)
+#    Time: 1 us  Iteration: 0  Instance: /fsm_vlg_vec_tst
+# End time: 20:43:41 on Mar 04,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

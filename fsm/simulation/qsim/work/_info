@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/quartus/ece559/turbo_encoder/fsm/simulation/qsim
+vfsm
+!s110 1551750219
+!i10b 1
+!s100 Nz>o:aiN?HBbO:EKoLf=U3
+I_L2M6TbNS>Il9Ujbzodd_1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1551750218
+8fsm.vo
+Ffsm.vo
+L0 32
+Z2 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1551750219.000000
+!s107 fsm.vo|
+!s90 -work|work|fsm.vo|
+!i113 1
+Z3 o-work work
+vfsm_vlg_vec_tst
+!s110 1551750220
+!i10b 1
+!s100 W]4fOCDBiA@P3zbN;?@7=2
+I<idIN:LUMFD5`5KjVFdfA1
+R1
+R0
+w1551750217
+8testWaveform.vwf.vt
+FtestWaveform.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+!s108 1551750220.000000
+!s107 testWaveform.vwf.vt|
+!s90 -work|work|testWaveform.vwf.vt|
+!i113 1
+R3

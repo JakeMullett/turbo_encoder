@@ -1,0 +1,322 @@
+|turbo_encoder
+clk => clk.IN4
+rst => rst.IN1
+length[0] => length[0].IN1
+length[1] => length[1].IN1
+length[2] => length[2].IN1
+length[3] => length[3].IN1
+length[4] => length[4].IN1
+length[5] => length[5].IN1
+length[6] => length[6].IN1
+length[7] => length[7].IN1
+length[8] => length[8].IN1
+data_valid => data_valid.IN1
+ck => ck.IN1
+ckp => ckp.IN1
+xk <= trellisterm:termination.d0
+zk <= trellisterm:termination.d1
+zkp <= trellisterm:termination.d2
+look_now <= enc_enable.DB_MAX_OUTPUT_PORT_TYPE
+currstate <= fsm:control.current_state
+
+
+|turbo_encoder|encoder:encoder1
+clr => clr.IN3
+enable => enable.IN3
+u => switch.DATAB
+clk => clk.IN3
+top <= switch.DB_MAX_OUTPUT_PORT_TYPE
+bottom <= xorGate0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= dffe_ref:D0.q
+Q[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|encoder:encoder1|dffe_ref:D2
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|encoder:encoder1|dffe_ref:D1
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|encoder:encoder1|dffe_ref:D0
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|encoder:encoder2
+clr => clr.IN3
+enable => enable.IN3
+u => switch.DATAB
+clk => clk.IN3
+top <= switch.DB_MAX_OUTPUT_PORT_TYPE
+bottom <= xorGate0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= dffe_ref:D0.q
+Q[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|encoder:encoder2|dffe_ref:D2
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|encoder:encoder2|dffe_ref:D1
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|encoder:encoder2|dffe_ref:D0
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|trellisterm:termination
+clk => clk.IN3
+rst => rst.IN3
+enable => enable.IN3
+q[0] => u0.IN0
+q[0] => u1.IN0
+q[1] => u0.IN1
+q[1] => u2.IN0
+q[2] => u1[1].IN1
+p[0] => u0.IN0
+p[0] => u1.IN0
+p[1] => u0.IN1
+p[1] => u2.IN0
+p[2] => u1[3].IN1
+d0 <= trellshift:shiftd0.port4
+d1 <= trellshift:shiftd1.port4
+d2 <= trellshift:shiftd2.port4
+
+
+|turbo_encoder|trellisterm:termination|trellshift:shiftd0
+aclr => aclr.IN1
+clock => clock.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+load => load.IN1
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[3] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+
+
+|turbo_encoder|trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN1
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => dffs[3].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|trellisterm:termination|trellshift:shiftd1
+aclr => aclr.IN1
+clock => clock.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+load => load.IN1
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[3] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+
+
+|turbo_encoder|trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN1
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => dffs[3].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|trellisterm:termination|trellshift:shiftd2
+aclr => aclr.IN1
+clock => clock.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+load => load.IN1
+q[0] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[1] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[2] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+q[3] <= lpm_shiftreg:LPM_SHIFTREG_component.q
+
+
+|turbo_encoder|trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN1
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => dffs[3].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|turbo_encoder|fsm:control
+data_valid => clr.OUTPUTSELECT
+data_valid => enable.OUTPUTSELECT
+data_valid => current_state.OUTPUTSELECT
+data_valid => current_state.OUTPUTSELECT
+data_valid => current_state.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+data_valid => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => length_counter.OUTPUTSELECT
+reset => current_state.OUTPUTSELECT
+reset => current_state.OUTPUTSELECT
+reset => current_state.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => clr~reg0.ENA
+reset => trellis_enable~reg0.ENA
+reset => next_state[0].ENA
+reset => next_state[1].ENA
+reset => next_state[2].ENA
+clk => clr~reg0.CLK
+clk => trellis_enable~reg0.CLK
+clk => enable~reg0.CLK
+clk => next_state[0].CLK
+clk => next_state[1].CLK
+clk => next_state[2].CLK
+clk => current_state[0]~reg0.CLK
+clk => current_state[1]~reg0.CLK
+clk => current_state[2]~reg0.CLK
+clk => length_counter[0].CLK
+clk => length_counter[1].CLK
+clk => length_counter[2].CLK
+clk => length_counter[3].CLK
+clk => length_counter[4].CLK
+clk => length_counter[5].CLK
+clk => length_counter[6].CLK
+clk => length_counter[7].CLK
+clk => length_counter[8].CLK
+length[0] => LessThan0.IN9
+length[1] => LessThan0.IN8
+length[2] => LessThan0.IN7
+length[3] => LessThan0.IN6
+length[4] => LessThan0.IN5
+length[5] => LessThan0.IN4
+length[6] => LessThan0.IN3
+length[7] => LessThan0.IN2
+length[8] => LessThan0.IN1
+enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trellis_enable <= trellis_enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+current_state[0] <= current_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+current_state[1] <= current_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+current_state[2] <= current_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clr <= clr~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

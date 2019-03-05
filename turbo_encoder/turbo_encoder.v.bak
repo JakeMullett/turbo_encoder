@@ -1,0 +1,13 @@
+module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now);
+	input clk, rst, length, data_valid, ck, ckp;
+	output xk, zk, zkp, look_now;
+	
+	encoder	encoder1(.clr(), .enable(), .u(), .clk(), .top(), .bottom(), .Q());
+	encoder 	encoder2(.clr(), .enable(), .u(), .clk(), .top(), .bottom(), .Q());
+	
+	trellisterm  termination(.clk(), .rst(), .enable(), .q(), .p(), .d0(), .d1(), .d2());
+	
+	fsm	control(.data_valid(), .reset(), .clk(), .length(), .enable(), .trellisenable(), .currentstate(), .clr());
+
+
+endmodule

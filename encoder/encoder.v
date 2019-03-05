@@ -1,38 +1,28 @@
 `timescale 1 ps / 1 ps
-module encoder (clr, enable, u, tOut, tIn, clk, Xk, Zk);
+module encoder (clr, enable, u, clk, top, bottom, Q);
 
-input clr, enable, u, tOut, clk;
-output Xk, Zk, tIn;
+input clr, enable, u, clk;
+output top, bottom;
+output [2:0] Q;
 
-reg switchWire;
+wire switch, D2in, xorQ1Q0, xorD2Q2; 
 
-wire Q2, Q1, Q0;
-wire xor3, xor2, xor1, xor0; 
+// the enable signal is the switch 
 
-always @(posedge clk)
+assign switch = enable ? u : xorQ1Q0;
 
-//assuming the enable signal is the switch? 
+assign top = switch;
 
-if(~enable) begin
-	switchWire <= tOut;
-end else begin
-	switchWire <= u;
-end 
+xor xorGate2(D2in,switch,xorQ1Q0);
 
-assign Xk = switchWire;
+dffe_ref D2(.q(Q[2]), .d(D2in), .clk(clk), .en(enable), .clr(clr));
 
-xor xorGate2(xor2,xor3,switchwire);
+xor xorGate1(xorD2Q2,D2in,Q[2]);
 
-dffe_ref D2(.q(Q2), .d(xor2), .clk(clk), .en(enable), .clr(clr));
+dffe_ref D1(.q(Q[1]), .d(Q[2]), .clk(clk), .en(enable), .clr(clr));
+dffe_ref D0(.q(Q[0]), .d(Q[1]), .clk(clk), .en(enable), .clr(clr));
 
-xor xorGate1(xor1,Q2,xor2);
-
-dffe_ref D1(.q(Q1), .d(Q2), .clk(clk), .en(enable), .clr(clr));
-dffe_ref D0(.q(Q0), .d(Q1), .clk(clk), .en(enable), .clr(clr));
-
-xor xorGate0(Zk,xor1,Q0);
-xor xorGate3(xor3,Q0,Q1);
-
-assign tIn = xor3;
+xor xorGate0(bottom,xorD2Q2,Q[0]);
+xor xorGate3(xorQ1Q0,Q[0],Q[1]);
 
 endmodule

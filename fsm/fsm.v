@@ -19,6 +19,8 @@ module fsm(
 	parameter WAIT = 0;
 	parameter ENCODE = 3;
 	parameter TERMINATE = 2;
+	parameter ENCTERM = 1;
+	parameter ENCMOD = 4;
 
 	wire[13:0] length;
 
@@ -58,12 +60,56 @@ module fsm(
 								trellis_enable <= 1;
 							end
 						end else begin
-							length_counter <= 0;
-							enable <= 0;
+							if (data_valid) begin
+								clr <= 1;
+								length_counter <= 0;
+								enable <= 1;
+								trellis_enable <= 0;
+								current_state <= ENCTERM;
+								switch <= 1;
+							end else begin
+								length_counter <= 0;
+								enable <= 0;
+								trellis_enable <= 0;
+								clr <= 1;
+								current_state <= TERMINATE;
+								switch <= 1;
+							end
+						end
+						end
+				ENCTERM: begin
+						if (length_counter < 3) begin
+							clr <= 0;
+							length_counter <= length_counter + 1;
+						end else begin
+							switch <= 0;
 							trellis_enable <= 0;
-							clr <= 1;
-							current_state <= TERMINATE;
-							switch <= 1;
+							trl_clr <= 1;
+							current_state <= ENCMOD;
+						end
+						end
+				ENCMOD: begin
+						if (length_counter < length - 1) begin
+							length_counter <= length_counter + 1;
+							if (length_counter == length-2) begin
+								trellis_enable <= 1;
+							end
+						end else begin
+							if (data_valid) begin
+								clr <= 1;
+								length_counter <= 0;
+								enable <= 1;
+								trellis_enable <= 0;
+								current_state <= ENCTERM;
+								switch <= 1;
+							end else begin
+								length_counter <= 0;
+								enable <= 0;
+								trellis_enable <= 0;
+								clr <= 1;
+								current_state <= TERMINATE;
+								switch <= 1;
+							end
 						end
 						end
 				TERMINATE: begin

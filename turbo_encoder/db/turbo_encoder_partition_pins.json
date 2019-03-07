@@ -24,11 +24,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ck",
-					"strict" : false
-				},
-				{
-					"name" : "ckp",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -36,11 +32,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "rst",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "ck",
+					"strict" : false
+				},
+				{
+					"name" : "ckp",
 					"strict" : false
 				},
 				{

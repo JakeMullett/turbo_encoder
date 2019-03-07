@@ -1,25 +1,32 @@
-module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out);
+module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out,
+	current_state, xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl, write_alt_enc, write_alt_trl,
+	trl_enable);
 	input clk, rst, data_valid, ck, ckp, length;
-	output xk, zk, zkp, look_now, length_out; 
+	output xk, zk, zkp, look_now, length_out;  
+	output reg [2:0] current_state;
+	output xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl, trl_enable;
+	output reg write_alt_enc, write_alt_trl;
+
 	
-	wire clear, enc_enable, trl_clr, trl_enable, switch;
+	
+	wire clear, enc_enable, trl_clr, mod_clr, switch;
 	wire [2:0] dff_q, dff_p, currstate;
-	wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
+	//wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
 	
 	assign length_out = length_delay;
 	
 	
-	encoder	encoder1(.clr(clear), .enable(enc_enable), .u(ck), .clk(clk), .top(xk_enc), .bottom(zk_enc), .Q(dff_q));
-	encoder 	encoder2(.clr(clear), .enable(enc_enable), .u(ckp), .clk(clk), .top(xkp_enc), .bottom(zkp_enc), .Q(dff_p));
+	encoder	encoder1(.clr(clear), .enable(enc_enable), .u(ck), .clk(clk), .top(xk_enc), .bottom(zk_enc), .Q(dff_q), .mod_clr(mod_clr));
+	encoder 	encoder2(.clr(clear), .enable(enc_enable), .u(ckp), .clk(clk), .top(xkp_enc), .bottom(zkp_enc), .Q(dff_p), .mod_clr(mod_clr));
 	
 	trellisterm  termination(.clk(clk), .rst(trl_clr), .enable(trl_enable), .q(dff_q), .p(dff_p), .d0(xk_trl), .d1(zk_trl), .d2(zkp_trl));
 	
-	fsm	control(.data_valid(data_valid), .reset(rst), .clk(clk), .length_flag(length), .enable(enc_enable), .trellis_enable(trl_enable), .current_state(currstate), .switch(switch), .clr(clear), .trl_clr(trl_clr));
+	fsm	control(.data_valid(data_valid), .reset(rst), .clk(clk), .length_flag(length), .enable(enc_enable), .trellis_enable(trl_enable), .current_state(currstate), .switch(switch), .clr(clear), .trl_clr(trl_clr), .mod_clr(mod_clr));
 	
 	
 	//parallel code
 	
-	reg write_alt_enc, write_alt_trl;
+	//reg write_alt_enc, write_alt_trl;
 	
 	always @(posedge clk) begin
 		if (rst) begin
@@ -27,6 +34,9 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 			write_alt_trl <= 0;
 		end else if (data_valid) begin
 			write_alt_enc <= ~write_alt_enc;
+			if (trl_enable) begin
+				write_alt_trl <= ~write_alt_trl;
+			end
 		end else if (trl_enable) begin
 			write_alt_trl <= ~write_alt_trl;
 		end
@@ -65,9 +75,10 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 		
 	dffe_ref dff1(length_delay, length, clk, 1'b1, rst);
 	dffe_ref dff2(write_delay, write_enc_1, clk, 1'b1, rst);
+	dffe_ref dff3(switch_delay, switch, clk, 1'b1, rst);
 
 		
-	reg current_state;
+	//reg current_state;
 	reg[13:0] length_counter;
 	
 	parameter READENC0 = 0;
@@ -167,9 +178,9 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	assign zk_trlf = read_trl_1 ? zk_trlf1 : zk_trlf0;
 	assign zkp_trlf = read_trl_1 ? zkp_trlf1 : zkp_trlf0;
 	
-	assign xk = switch ? xk_trlf : xk_encf;
-	assign zk = switch ? zk_trlf : zk_encf;
-	assign zkp = switch ? zkp_trlf : zkp_encf;
+	assign xk = switch_delay ? xk_trlf : xk_encf;
+	assign zk = switch_delay ? zk_trlf : zk_encf;
+	assign zkp = switch_delay ? zkp_trlf : zkp_encf;
 	
 	assign look_now = read_enc_1 | read_enc_0 | read_trl_1 | read_trl_0;
 endmodule

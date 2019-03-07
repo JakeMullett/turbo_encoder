@@ -8,10 +8,11 @@ module fsm(
 	current_state,
 	switch,
 	clr,
-	trl_clr);
+	trl_clr,
+	mod_clr);
 	
 	input data_valid, reset, clk, length_flag;
-	output reg enable, clr, trellis_enable, switch, trl_clr;
+	output reg enable, clr, trellis_enable, switch, trl_clr, mod_clr;
 	
 	output reg[2:0] current_state;
 	reg[13:0] length_counter;
@@ -61,7 +62,7 @@ module fsm(
 							end
 						end else begin
 							if (data_valid) begin
-								clr <= 1;
+								mod_clr <= 1;
 								length_counter <= 0;
 								enable <= 1;
 								trellis_enable <= 0;
@@ -79,7 +80,7 @@ module fsm(
 						end
 				ENCTERM: begin
 						if (length_counter < 3) begin
-							clr <= 0;
+							mod_clr <= 0;
 							length_counter <= length_counter + 1;
 						end else begin
 							switch <= 0;
@@ -89,9 +90,10 @@ module fsm(
 						end
 						end
 				ENCMOD: begin
-						if (length_counter < length - 1) begin
+						if (length_counter < length - 2) begin
 							length_counter <= length_counter + 1;
-							if (length_counter == length-2) begin
+							trl_clr <= 0;
+							if (length_counter == length-3) begin
 								trellis_enable <= 1;
 							end
 						end else begin

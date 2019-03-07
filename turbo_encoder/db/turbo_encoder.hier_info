@@ -1,6 +1,6 @@
 |turbo_encoder
-clk => clk.IN18
-rst => rst.IN15
+clk => clk.IN19
+rst => rst.IN16
 length => length.IN2
 data_valid => data_valid.IN1
 ck => ck.IN1
@@ -10,6 +10,18 @@ zk <= zk.DB_MAX_OUTPUT_PORT_TYPE
 zkp <= zkp.DB_MAX_OUTPUT_PORT_TYPE
 look_now <= look_now.DB_MAX_OUTPUT_PORT_TYPE
 length_out <= dffe_ref:dff1.port0
+current_state[0] <= current_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+current_state[1] <= current_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+current_state[2] <= current_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+xk_enc <= xk_enc.DB_MAX_OUTPUT_PORT_TYPE
+zk_enc <= zk_enc.DB_MAX_OUTPUT_PORT_TYPE
+zkp_enc <= zkp_enc.DB_MAX_OUTPUT_PORT_TYPE
+xk_trl <= xk_trl.DB_MAX_OUTPUT_PORT_TYPE
+zk_trl <= zk_trl.DB_MAX_OUTPUT_PORT_TYPE
+zkp_trl <= zkp_trl.DB_MAX_OUTPUT_PORT_TYPE
+write_alt_enc <= write_alt_enc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+write_alt_trl <= write_alt_trl~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trl_enable <= trl_enable.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |turbo_encoder|encoder:encoder1
@@ -20,8 +32,10 @@ clk => clk.IN3
 top <= switch.DB_MAX_OUTPUT_PORT_TYPE
 bottom <= xorGate0.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= dffe_ref:D0.q
-Q[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= dffe_ref:D1.q
+Q[2] <= dffe_ref:D2.q
+mod_clr => D1in.OUTPUTSELECT
+mod_clr => D0in.OUTPUTSELECT
 
 
 |turbo_encoder|encoder:encoder1|dffe_ref:D2
@@ -56,8 +70,10 @@ clk => clk.IN3
 top <= switch.DB_MAX_OUTPUT_PORT_TYPE
 bottom <= xorGate0.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= dffe_ref:D0.q
-Q[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= dffe_ref:D1.q
+Q[2] <= dffe_ref:D2.q
+mod_clr => D1in.OUTPUTSELECT
+mod_clr => D0in.OUTPUTSELECT
 
 
 |turbo_encoder|encoder:encoder2|dffe_ref:D2
@@ -265,6 +281,8 @@ data_valid => length_counter.OUTPUTSELECT
 data_valid => length_counter.OUTPUTSELECT
 data_valid => length_counter.OUTPUTSELECT
 data_valid => length_counter.OUTPUTSELECT
+data_valid => mod_clr.OUTPUTSELECT
+data_valid => clr.OUTPUTSELECT
 data_valid => enable.DATAA
 data_valid => current_state.DATAA
 data_valid => enable.DATAA
@@ -293,6 +311,8 @@ reset => trellis_enable.OUTPUTSELECT
 reset => switch.OUTPUTSELECT
 reset => clr.OUTPUTSELECT
 reset => trl_clr~reg0.ENA
+reset => mod_clr~reg0.ENA
+clk => mod_clr~reg0.CLK
 clk => trl_clr~reg0.CLK
 clk => clr~reg0.CLK
 clk => switch~reg0.CLK
@@ -316,7 +336,8 @@ clk => length_counter[11].CLK
 clk => length_counter[12].CLK
 clk => length_counter[13].CLK
 length_flag => Add0.IN28
-length_flag => Add2.IN26
+length_flag => Add1.IN26
+length_flag => Add3.IN28
 enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
 trellis_enable <= trellis_enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
 current_state[0] <= current_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -325,6 +346,7 @@ current_state[2] <= current_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 switch <= switch~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clr <= clr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 trl_clr <= trl_clr~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mod_clr <= mod_clr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |turbo_encoder|dffe_ref:dff1
@@ -336,6 +358,14 @@ clr => q~reg0.ACLR
 
 
 |turbo_encoder|dffe_ref:dff2
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|turbo_encoder|dffe_ref:dff3
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK

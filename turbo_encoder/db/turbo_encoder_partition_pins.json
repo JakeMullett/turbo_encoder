@@ -24,15 +24,51 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "current_state[0]",
 					"strict" : false
 				},
 				{
-					"name" : "length",
+					"name" : "current_state[1]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "current_state[2]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_enc",
+					"strict" : false
+				},
+				{
+					"name" : "zk_enc",
+					"strict" : false
+				},
+				{
+					"name" : "zkp_enc",
+					"strict" : false
+				},
+				{
+					"name" : "xk_trl",
+					"strict" : false
+				},
+				{
+					"name" : "zk_trl",
+					"strict" : false
+				},
+				{
+					"name" : "zkp_trl",
+					"strict" : false
+				},
+				{
+					"name" : "write_alt_enc",
+					"strict" : false
+				},
+				{
+					"name" : "write_alt_trl",
+					"strict" : false
+				},
+				{
+					"name" : "trl_enable",
 					"strict" : false
 				},
 				{
@@ -41,6 +77,18 @@
 				},
 				{
 					"name" : "ckp",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "length",
 					"strict" : false
 				},
 				{

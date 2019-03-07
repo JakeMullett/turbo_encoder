@@ -1,5 +1,5 @@
 Analysis & Synthesis report for turbo_encoder
-Tue Mar 05 13:57:59 2019
+Wed Mar 06 19:40:49 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,24 +14,22 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component
- 13. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component
- 14. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component
- 15. Parameter Settings for User Entity Instance: fsm:control
- 16. lpm_shiftreg Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "fsm:control"
- 18. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"
- 19. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd1"
- 20. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd0"
- 21. Port Connectivity Checks: "encoder:encoder2"
- 22. Port Connectivity Checks: "encoder:encoder1"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component
+ 12. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component
+ 13. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component
+ 14. Parameter Settings for User Entity Instance: fsm:control
+ 15. lpm_shiftreg Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "fsm:control"
+ 17. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"
+ 18. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd1"
+ 19. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd0"
+ 20. Port Connectivity Checks: "encoder:encoder2"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,14 +55,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 05 13:57:59 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Mar 06 19:40:49 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; turbo_encoder                               ;
 ; Top-level Entity Name           ; turbo_encoder                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 31                                          ;
-; Total pins                      ; 19                                          ;
+; Total registers                 ; 38                                          ;
+; Total pins                      ; 11                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -204,25 +202,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 22        ;
+; Estimate of Logic utilization (ALMs needed) ; 32        ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 38        ;
-;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 3         ;
-;     -- 5 input functions                    ; 6         ;
-;     -- 4 input functions                    ; 8         ;
-;     -- <=3 input functions                  ; 20        ;
+; Combinational ALUT usage for logic          ; 50        ;
+;     -- 7 input functions                    ; 3         ;
+;     -- 6 input functions                    ; 9         ;
+;     -- 5 input functions                    ; 5         ;
+;     -- 4 input functions                    ; 11        ;
+;     -- <=3 input functions                  ; 22        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 31        ;
+; Dedicated logic registers                   ; 38        ;
 ;                                             ;           ;
-; I/O pins                                    ; 19        ;
+; I/O pins                                    ; 11        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 31        ;
-; Total fan-out                               ; 263       ;
-; Average fan-out                             ; 2.46      ;
+; Maximum fan-out                             ; 38        ;
+; Total fan-out                               ; 335       ;
+; Average fan-out                             ; 3.05      ;
 +---------------------------------------------+-----------+
 
 
@@ -231,7 +229,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Entity Name   ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+---------------+--------------+
-; |turbo_encoder                                 ; 38 (0)              ; 31 (0)                    ; 0                 ; 0          ; 19   ; 0            ; |turbo_encoder                                                                                ; turbo_encoder ; work         ;
+; |turbo_encoder                                 ; 50 (3)              ; 38 (0)                    ; 0                 ; 0          ; 11   ; 0            ; |turbo_encoder                                                                                ; turbo_encoder ; work         ;
 ;    |encoder:encoder1|                          ; 1 (1)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1                                                               ; encoder       ; work         ;
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D0                                                   ; dffe_ref      ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D1                                                   ; dffe_ref      ; work         ;
@@ -240,14 +238,14 @@ refer to the applicable agreement for further details.
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D0                                                   ; dffe_ref      ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D1                                                   ; dffe_ref      ; work         ;
 ;       |dffe_ref:D2|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D2                                                   ; dffe_ref      ; work         ;
-;    |fsm:control|                               ; 25 (25)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                    ; fsm           ; work         ;
-;    |trellisterm:termination|                   ; 11 (4)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination                                                        ; trellisterm   ; work         ;
+;    |fsm:control|                               ; 34 (34)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                    ; fsm           ; work         ;
+;    |trellisterm:termination|                   ; 11 (0)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination                                                        ; trellisterm   ; work         ;
 ;       |trellshift:shiftd0|                     ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0                                     ; trellshift    ; work         ;
 ;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg  ; work         ;
-;       |trellshift:shiftd1|                     ; 2 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd1                                     ; trellshift    ; work         ;
-;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg  ; work         ;
-;       |trellshift:shiftd2|                     ; 2 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd2                                     ; trellshift    ; work         ;
-;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg  ; work         ;
+;       |trellshift:shiftd1|                     ; 4 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd1                                     ; trellshift    ; work         ;
+;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg  ; work         ;
+;       |trellshift:shiftd2|                     ; 4 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd2                                     ; trellshift    ; work         ;
+;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg  ; work         ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -257,21 +255,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 ; Register name                                                                          ; Reason for Removal                                                                                 ;
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; fsm:control|next_state[0..2]                                                           ; Stuck at GND due to stuck port data_in                                                             ;
 ; trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ; Merged with trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ;
 ; fsm:control|current_state[2]                                                           ; Stuck at GND due to stuck port data_in                                                             ;
-; Total Number of Removed Registers = 5                                                  ;                                                                                                    ;
+; Total Number of Removed Registers = 2                                                  ;                                                                                                    ;
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                    ;
-+---------------------------+---------------------------+----------------------------------------+
-; Register name             ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------------------+---------------------------+----------------------------------------+
-; fsm:control|next_state[2] ; Stuck at GND              ; fsm:control|current_state[2]           ;
-;                           ; due to stuck port data_in ;                                        ;
-+---------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -279,12 +266,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
-; Number of registers using Synchronous Clear  ; 9     ;
-; Number of registers using Synchronous Load   ; 4     ;
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Clock Enable       ; 21    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -294,8 +281,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 12:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |turbo_encoder|fsm:control|current_state[0]  ;
-; 12:1               ; 9 bits    ; 72 LEs        ; 0 LEs                ; 72 LEs                 ; Yes        ; |turbo_encoder|fsm:control|length_counter[8] ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |turbo_encoder|fsm:control|current_state[1]  ;
+; 12:1               ; 14 bits   ; 112 LEs       ; 0 LEs                ; 112 LEs                ; Yes        ; |turbo_encoder|fsm:control|length_counter[7] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
@@ -358,11 +345,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------+
 ; Parameter Name ; Value ; Type                            ;
 +----------------+-------+---------------------------------+
-; INIT           ; 1     ; Signed Integer                  ;
 ; WAIT           ; 0     ; Signed Integer                  ;
 ; ENCODE         ; 3     ; Signed Integer                  ;
 ; TERMINATE      ; 2     ; Signed Integer                  ;
-; BUFFER         ; 7     ; Signed Integer                  ;
 +----------------+-------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -385,13 +370,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+--------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fsm:control"                                                                                                                              ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                                                                          ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-; current_state ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "current_state[2..1]" have no fanouts ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fsm:control"                                                                                    ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; current_state[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -425,24 +410,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "encoder:encoder2"                                                                     ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; top    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; bottom ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "encoder:encoder1"                                                                     ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; top    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; bottom ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "encoder:encoder2"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; top  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -450,28 +424,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 31                          ;
-;     CLR               ; 7                           ;
-;     CLR SLD           ; 4                           ;
+; arriav_ff             ; 38                          ;
+;     CLR               ; 11                          ;
 ;     ENA CLR           ; 6                           ;
-;     ENA SCLR          ; 9                           ;
-;     plain             ; 5                           ;
-; arriav_lcell_comb     ; 38                          ;
-;     arith             ; 9                           ;
-;         1 data inputs ; 9                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 28                          ;
+;     ENA SCLR          ; 15                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 50                          ;
+;     arith             ; 14                          ;
+;         1 data inputs ; 14                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 33                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 6                           ;
-;         6 data inputs ; 3                           ;
-; boundary_port         ; 19                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 5                           ;
+;         6 data inputs ; 9                           ;
+; boundary_port         ; 11                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.96                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -480,7 +453,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -490,7 +463,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Mar 05 13:57:42 2019
+    Info: Processing started: Wed Mar 06 19:40:32 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -507,8 +480,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_encoder.v
     Info (12023): Found entity 1: turbo_encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 1
 Info (12127): Elaborating entity "turbo_encoder" for the top level hierarchy
-Warning (10858): Verilog HDL warning at turbo_encoder.v(7): object switch used but never assigned File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 7
-Warning (10030): Net "switch" at turbo_encoder.v(7) has no driver or initial value, using a default initial value '0' File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 7
 Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 12
 Info (12128): Elaborating entity "dffe_ref" for hierarchy "encoder:encoder1|dffe_ref:D2" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 18
 Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 15
@@ -521,28 +492,26 @@ Info (12133): Instantiated megafunction "trellisterm:termination|trellshift:shif
     Info (12134): Parameter "lpm_type" = "LPM_SHIFTREG"
     Info (12134): Parameter "lpm_width" = "4"
 Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 17
-Warning (10230): Verilog HDL assignment warning at fsm.v(27): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 27
-Warning (10230): Verilog HDL assignment warning at fsm.v(35): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 35
-Warning (10230): Verilog HDL assignment warning at fsm.v(36): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 36
-Warning (10230): Verilog HDL assignment warning at fsm.v(52): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 52
-Warning (10230): Verilog HDL assignment warning at fsm.v(58): truncated value with size 32 to match size of target (9) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 58
-Warning (10230): Verilog HDL assignment warning at fsm.v(63): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 63
-Warning (10230): Verilog HDL assignment warning at fsm.v(68): truncated value with size 32 to match size of target (9) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 68
-Warning (10230): Verilog HDL assignment warning at fsm.v(73): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 73
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10230): Verilog HDL assignment warning at fsm.v(29): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 29
+Warning (10230): Verilog HDL assignment warning at fsm.v(38): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 38
+Warning (10230): Verilog HDL assignment warning at fsm.v(50): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 50
+Warning (10230): Verilog HDL assignment warning at fsm.v(56): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 56
+Warning (10230): Verilog HDL assignment warning at fsm.v(65): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 65
+Warning (10230): Verilog HDL assignment warning at fsm.v(71): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 71
+Warning (10230): Verilog HDL assignment warning at fsm.v(79): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 79
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/output_files/turbo_encoder.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 14 input pins
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 42 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 716 megabytes
-    Info: Processing ended: Tue Mar 05 13:57:59 2019
+    Info (21061): Implemented 54 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 720 megabytes
+    Info: Processing ended: Wed Mar 06 19:40:49 2019
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+

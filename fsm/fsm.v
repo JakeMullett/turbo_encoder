@@ -7,10 +7,11 @@ module fsm(
 	trellis_enable,
 	current_state,
 	switch,
-	clr);
+	clr,
+	trl_clr);
 	
 	input data_valid, reset, clk, length_flag;
-	output reg enable, clr, trellis_enable, switch;
+	output reg enable, clr, trellis_enable, switch, trl_clr;
 	
 	output reg[2:0] current_state;
 	reg[13:0] length_counter;
@@ -21,7 +22,7 @@ module fsm(
 
 	wire[13:0] length;
 
-	assign length = length_flag ? 13'd6000 : 13'd1000;
+	assign length = length_flag ? 13'd6 : 13'd4; //changed for testing purposes
 	
 	initial begin
 		length_counter <= 0;
@@ -44,25 +45,29 @@ module fsm(
 				WAIT: begin
 						if (data_valid) begin
 							clr <= 0;
+							trl_clr <= 0;
 							enable <= 1;
 							current_state <= ENCODE;
 							length_counter <= 0; //because buffer state 1 clock
 						end
 						end
 				ENCODE: begin
-						if (length_counter < length) begin
+						if (length_counter < length-1) begin
 							length_counter <= length_counter + 1;
+							if (length_counter == length-2) begin
+								trellis_enable <= 1;
+							end
 						end else begin
 							length_counter <= 0;
 							enable <= 0;
-							trellis_enable <= 1;
+							trellis_enable <= 0;
 							clr <= 1;
 							current_state <= TERMINATE;
 							switch <= 1;
 						end
 						end
 				TERMINATE: begin
-						if (length_counter < 4) begin
+						if (length_counter < 3) begin
 							length_counter <= length_counter + 1;
 						end else begin
 							clr <= 0;
@@ -70,6 +75,7 @@ module fsm(
 							length_counter <= 0;
 							enable <= 0;
 							trellis_enable <= 0;
+							trl_clr <= 1;
 							current_state <= WAIT;
 						end
 						end

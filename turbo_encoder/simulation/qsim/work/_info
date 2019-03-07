@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim
+vturbo_encoder
+Z1 !s110 1551919322
+!i10b 1
+!s100 kJf3PZEXhe>EBQW04QI?d2
+IZ6gQZKE6IQXQ7omcgTQ@11
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1551919321
+8turbo_encoder.vo
+Fturbo_encoder.vo
+L0 31
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1551919322.000000
+!s107 turbo_encoder.vo|
+!s90 -work|work|turbo_encoder.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vturbo_encoder_vlg_vec_tst
+R1
+!i10b 1
+!s100 DG^bJWjI=>Te`bT;8`B7?2
+Ii=D`Pj^X^iEPVKROFh6253
+R2
+R0
+w1551919318
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6

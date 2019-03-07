@@ -1,13 +1,13 @@
-Fitter Status : Successful - Tue Mar 05 13:58:34 2019
+Fitter Status : Successful - Wed Mar 06 19:41:23 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : turbo_encoder
 Top-level Entity Name : turbo_encoder
 Family : Cyclone V
 Device : 5CEBA2F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 23 / 9,430 ( < 1 % )
-Total registers : 32
-Total pins : 19 / 224 ( 8 % )
+Logic utilization (in ALMs) : 32 / 9,430 ( < 1 % )
+Total registers : 38
+Total pins : 11 / 224 ( 5 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 1,802,240 ( 0 % )
 Total RAM Blocks : 0 / 176 ( 0 % )

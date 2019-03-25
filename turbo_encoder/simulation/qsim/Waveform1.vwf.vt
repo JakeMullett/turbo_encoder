@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "03/07/2019 11:58:03"
+// Generated on "03/24/2019 23:38:26"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          turbo_encoder
 // 
@@ -37,11 +37,17 @@ reg length;
 reg rst;
 // wires                                               
 wire [2:0] current_state;
+wire length_delay;
 wire length_out;
 wire look_now;
-wire trl_enable;
-wire write_alt_enc;
-wire write_alt_trl;
+wire read_enc_0;
+wire read_enc_1;
+wire read_trl_0;
+wire read_trl_1;
+wire write_enc_0;
+wire write_enc_1;
+wire write_trl_0;
+wire write_trl_1;
 wire xk;
 wire xk_enc;
 wire xk_trl;
@@ -61,12 +67,18 @@ turbo_encoder i1 (
 	.current_state(current_state),
 	.data_valid(data_valid),
 	.length(length),
+	.length_delay(length_delay),
 	.length_out(length_out),
 	.look_now(look_now),
+	.read_enc_0(read_enc_0),
+	.read_enc_1(read_enc_1),
+	.read_trl_0(read_trl_0),
+	.read_trl_1(read_trl_1),
 	.rst(rst),
-	.trl_enable(trl_enable),
-	.write_alt_enc(write_alt_enc),
-	.write_alt_trl(write_alt_trl),
+	.write_enc_0(write_enc_0),
+	.write_enc_1(write_enc_1),
+	.write_trl_0(write_trl_0),
+	.write_trl_1(write_trl_1),
 	.xk(xk),
 	.xk_enc(xk_enc),
 	.xk_trl(xk_trl),

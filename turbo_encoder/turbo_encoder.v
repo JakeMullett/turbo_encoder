@@ -1,15 +1,17 @@
 module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out,
-	current_state, xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl, write_alt_enc, write_alt_trl,
-	trl_enable);
+	current_state, xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl,
+	write_enc_0, write_enc_1, write_trl_0, write_trl_1, length_delay, read_enc_0, read_enc_1,
+	read_trl_0, read_trl_1);
 	input clk, rst, data_valid, ck, ckp, length;
-	output xk, zk, zkp, look_now, length_out;  
+	output xk, zk, zkp, look_now, length_out, length_delay;  
 	output reg [2:0] current_state;
-	output xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl, trl_enable;
-	output reg write_alt_enc, write_alt_trl;
+	output xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl, write_enc_0, write_enc_1, write_trl_0, write_trl_1;
+	output reg read_enc_0, read_enc_1, read_trl_0, read_trl_1;
+	
 
 	
 	
-	wire clear, enc_enable, trl_clr, mod_clr, switch;
+	wire clear, trl_clr, mod_clr, switch, enc_enable, trl_enable;
 	wire [2:0] dff_q, dff_p, currstate;
 	//wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
 	
@@ -26,7 +28,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	
 	//parallel code
 	
-	//reg write_alt_enc, write_alt_trl;
+	reg write_alt_enc, write_alt_trl;
 	
 	always @(posedge clk) begin
 		if (rst) begin
@@ -42,41 +44,22 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 		end
 	end
 	
-	reg write_enc_0, write_enc_1, write_trl_0, write_trl_1, read_enc_0, read_enc_1, read_trl_0, read_trl_1;
-	
-	always @(posedge clk) begin
-		if (rst) begin
-			write_enc_0 <= 0;
-			write_enc_1 <= 0;
-		end else if (write_alt_enc & enc_enable) begin
-			write_enc_1 <= 1;
-			write_enc_0 <= 0;
-		end else if (~write_alt_enc & enc_enable) begin
-			write_enc_1 <= 0;
-			write_enc_0 <= 0;
-		end
-		end
+	//wire write_enc_0, write_enc_1, write_trl_0, write_trl_1; 
+	//reg read_enc_0, read_enc_1, read_trl_0, read_trl_1;
 		
-	always @(posedge clk) begin
-		if (rst) begin
-			write_trl_0 <= 0;
-			write_trl_1 <= 0;
-		end else if (write_alt_trl & switch) begin
-			write_trl_1 <= 1;
-			write_trl_0 <= 0;
-		end else if (~write_alt_trl & switch) begin
-			write_trl_0 <= 1;
-			write_trl_1 <= 0;
-		end
-		end
-	
-	wire length_delay;
-	reg write_deay;
+	assign write_enc_0 = ~write_alt_enc & enc_enable;
+	assign write_enc_1 = write_alt_enc & enc_enable;
+	assign write_trl_0 = ~write_alt_trl & switch;
+	assign write_trl_1 = write_alt_trl & switch;
 		
-	dffe_ref dff1(length_delay, length, clk, 1'b1, rst);
-	dffe_ref dff2(write_delay, write_enc_1, clk, 1'b1, rst);
-	dffe_ref dff3(switch_delay, switch, clk, 1'b1, rst);
-
+	//wire length_delay;
+	
+	wire em, fl;
+	wire [12:0] usedw;
+	
+	turbo_fifo lengthfifo(rst, clk, length, read_length, enc_enable, em, fl, length_delay, usedw);
+	
+	reg read_length;
 		
 	//reg current_state;
 	reg[13:0] length_counter;
@@ -89,6 +72,8 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	
 	wire[13:0] code_length;
 	assign code_length = length_delay ? 13'd6 : 13'd4; //changed for testing purposes
+	
+	//FIFO Read FSM
 	
 	initial begin
 		read_enc_0 <= 0;
@@ -106,9 +91,10 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 		end else begin
 			case (current_state)
 				NOREAD: begin
-					if (write_delay) begin
+					if (write_enc_1) begin
 						current_state <= READENC1;
 						read_enc_1 <= 1;
+						read_length <= 1;
 					end
 					end
 				READENC1: begin
@@ -119,6 +105,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 						read_enc_1 <= 0;
 						read_trl_1 <= 1;
 						length_counter <= 0;
+						read_length <= 0;
 					end
 					end
 				READTRL1: begin
@@ -127,7 +114,15 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 					end else begin
 						current_state <= READENC0;
 						read_trl_1 <= 0;
-						read_enc_0 <= 0;
+						read_enc_0 <= 1;
+						length_counter <= 0;
+						read_length <= 1;
+						if (~enc_enable) begin
+							current_state <= NOREAD;
+							read_trl_1 <= 0;
+							read_enc_0 <= 0;
+							length_counter <= 0;
+						end
 					end
 					end
 				READENC0: begin
@@ -138,6 +133,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 						read_enc_0 <= 0;
 						read_trl_0 <= 1;
 						length_counter <= 0;
+						read_length <= 0;
 					end
 					end
 				READTRL0: begin
@@ -147,6 +143,14 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 						current_state <= READENC1;
 						read_trl_0 <= 0;
 						read_enc_1 <= 1;
+						length_counter <= 0;
+						read_length <= 1;
+						if (~enc_enable) begin
+							current_state <= NOREAD;
+							read_trl_0 <= 0;
+							read_enc_1 <= 0;
+							length_counter <= 0;
+						end
 					end
 					end
 				endcase
@@ -155,19 +159,19 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 		
 	wire xk_encf0, zk_encf0, zkp_encf0, xkp_encf0, xk_trlf0, zk_trlf0, zkp_trlf0, xk_encf1, zk_encf1, zkp_encf1, xkp_encf1, xk_trlf1, zk_trlf1, zkp_trlf1;
 	
-	turbo_fifo fifo1_enc(.aclr(rst), .clock(clk), .data(xk_enc), .rdreq(read_enc_0), .wrreq(write_enc_0), .empty(), .full(), .q(xk_encf0), .usedw());
-	turbo_fifo fifo2_enc(.aclr(rst), .clock(clk), .data(zk_enc), .rdreq(read_enc_0), .wrreq(write_enc_0), .empty(), .full(), .q(zk_encf0), .usedw());
-	turbo_fifo fifo3_enc(.aclr(rst), .clock(clk), .data(zkp_enc), .rdreq(read_enc_0), .wrreq(write_enc_0), .empty(), .full(), .q(zkp_encf0), .usedw());
-	turbo_fifo fifo1_trl(.aclr(rst), .clock(clk), .data(xk_trl), .rdreq(read_trl_0), .wrreq(write_trl_0), .empty(), .full(), .q(xk_trlf0), .usedw());
-	turbo_fifo fifo2_trl(.aclr(rst), .clock(clk), .data(zk_trl), .rdreq(read_trl_0), .wrreq(write_trl_0), .empty(), .full(), .q(zk_trlf0), .usedw());
-	turbo_fifo fifo3_trl(.aclr(rst), .clock(clk), .data(zkp_trl), .rdreq(read_trl_0), .wrreq(write_trl_0), .empty(), .full(), .q(zkp_trlf0), .usedw());
+	turbo_fifo fifo1_enc(rst, clk, xk_enc, read_enc_0, write_enc_0, , , xk_encf0, );
+	turbo_fifo fifo2_enc(rst, clk, zk_enc, read_enc_0, write_enc_0, , , zk_encf0, );
+	turbo_fifo fifo3_enc(rst, clk, zkp_enc, read_enc_0, write_enc_0, , , zkp_encf0, );
+	turbo_fifo fifo1_trl(rst, clk, xk_trl, read_trl_0, write_trl_0, , , xk_trlf0, );
+	turbo_fifo fifo2_trl(rst, clk, zk_trl, read_trl_0, write_trl_0, , , zk_trlf0, );
+	turbo_fifo fifo3_trl(rst, clk, zkp_trl, read_trl_0, write_trl_0, , , zkp_trlf0, );
 	
-	turbo_fifo fifo1_enc_alt(.aclr(rst), .clock(clk), .data(xk_enc), .rdreq(read_enc_1), .wrreq(write_enc_1), .empty(), .full(), .q(xk_encf1), .usedw());
-	turbo_fifo fifo2_enc_alt(.aclr(rst), .clock(clk), .data(zk_enc), .rdreq(read_enc_1), .wrreq(write_enc_1), .empty(), .full(), .q(zk_encf1), .usedw());
-	turbo_fifo fifo3_enc_alt(.aclr(rst), .clock(clk), .data(zkp_enc), .rdreq(read_enc_1), .wrreq(write_enc_1), .empty(), .full(), .q(zkp_encf1), .usedw());
-	turbo_fifo fifo1_trl_alt(.aclr(rst), .clock(clk), .data(xk_trl), .rdreq(read_trl_1), .wrreq(write_trl_1), .empty(), .full(), .q(xk_trlf1), .usedw());
-	turbo_fifo fifo2_trl_alt(.aclr(rst), .clock(clk), .data(zk_trl), .rdreq(read_trl_1), .wrreq(write_trl_1), .empty(), .full(), .q(zk_trlf1), .usedw());
-	turbo_fifo fifo3_trl_alt(.aclr(rst), .clock(clk), .data(zkp_trl), .rdreq(read_trl_1), .wrreq(write_trl_1), .empty(), .full(), .q(zkp_trlf1), .usedw());
+	turbo_fifo fifo1_enc_alt(rst, clk, xk_enc, read_enc_1, write_enc_1, , , xk_encf1, );
+	turbo_fifo fifo2_enc_alt(rst, clk, zk_enc, read_enc_1, write_enc_1, , , zk_encf1, );
+	turbo_fifo fifo3_enc_alt(rst, clk, zkp_enc, read_enc_1, write_enc_1, , , zkp_encf1, );
+	turbo_fifo fifo1_trl_alt(rst, clk, xk_trl, read_trl_1, write_trl_1, , , xk_trlf1, );
+	turbo_fifo fifo2_trl_alt(rst, clk, zk_trl, read_trl_1, write_trl_1, , , zk_trlf1, );
+	turbo_fifo fifo3_trl_alt(rst, clk, zkp_trl, read_trl_1, write_trl_1, , , zkp_trlf1, );
 	
 	wire xk_encf, zk_encf, zkp_encf, xkp_encf, xk_trlf, zk_trlf, zkp_trlf;
 	
@@ -178,9 +182,9 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	assign zk_trlf = read_trl_1 ? zk_trlf1 : zk_trlf0;
 	assign zkp_trlf = read_trl_1 ? zkp_trlf1 : zkp_trlf0;
 	
-	assign xk = switch_delay ? xk_trlf : xk_encf;
-	assign zk = switch_delay ? zk_trlf : zk_encf;
-	assign zkp = switch_delay ? zkp_trlf : zkp_encf;
+	assign xk = (read_trl_0 | read_trl_1) ? xk_trlf : xk_encf;
+	assign zk = (read_trl_0 | read_trl_1) ? zk_trlf : zk_encf;
+	assign zkp = (read_trl_0 | read_trl_1) ? zkp_trlf : zkp_encf;
 	
 	assign look_now = read_enc_1 | read_enc_0 | read_trl_1 | read_trl_0;
 endmodule

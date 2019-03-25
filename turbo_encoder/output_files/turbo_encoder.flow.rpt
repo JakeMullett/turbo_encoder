@@ -1,5 +1,5 @@
 Flow report for turbo_encoder
-Thu Mar 07 11:58:06 2019
+Sun Mar 24 23:38:28 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Mar 07 11:58:06 2019       ;
+; Flow Status                     ; Successful - Sun Mar 24 23:38:28 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; turbo_encoder                               ;
 ; Top-level Entity Name           ; turbo_encoder                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA2F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 310 / 9,430 ( 3 % )                         ;
-; Total registers                 ; 549                                         ;
-; Total pins                      ; 23 / 224 ( 10 % )                           ;
+; Logic utilization (in ALMs)     ; 446 / 9,430 ( 5 % )                         ;
+; Total registers                 ; 766                                         ;
+; Total pins                      ; 29 / 224 ( 13 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 73,734 / 1,802,240 ( 4 % )                  ;
+; Total block memory bits         ; 106,496 / 1,802,240 ( 6 % )                 ;
 ; Total DSP Blocks                ; 0 / 25 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/07/2019 11:56:20 ;
+; Start date & time ; 03/24/2019 23:36:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; turbo_encoder       ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 345050776957.155197777906008           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 345050776957.155348499103896           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -96,14 +96,14 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 729 MB              ; 00:00:24                           ;
-; Fitter               ; 00:00:46     ; 1.0                     ; 1903 MB             ; 00:01:03                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 728 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.1                     ; 987 MB              ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 659 MB              ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 624 MB              ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 633 MB              ; 00:00:02                           ;
-; Total                ; 00:01:24     ; --                      ; --                  ; 00:01:48                           ;
+; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 730 MB              ; 00:00:23                           ;
+; Fitter               ; 00:00:54     ; 1.0                     ; 1940 MB             ; 00:01:14                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 734 MB              ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:11     ; 1.1                     ; 992 MB              ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 665 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 625 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 638 MB              ; 00:00:02                           ;
+; Total                ; 00:01:37     ; --                      ; --                  ; 00:01:57                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

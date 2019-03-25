@@ -25,9 +25,17 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Mar 07 11:58:02 2019
+    Info: Processing started: Sun Mar 24 23:38:24 2019
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off turbo_encoder -c turbo_encoder --vector_source=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/Waveform1.vwf --testbench_file=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim/Waveform1.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+201005): Ignoring output pin "read_trl_1" in vector source file when writing test bench files
+Info (201000): Generated Verilog Test Bench File C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim/Waveform1.vwf.vt for simulation
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 629 megabytes
+    Info: Processing ended: Sun Mar 24 23:38:26 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -53,13 +61,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Mar 07 11:58:04 2019
+    Info: Processing started: Sun Mar 24 23:38:26 2019
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim/ turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file turbo_encoder.vo in folder "C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Thu Mar 07 11:58:06 2019
+    Info: Peak virtual memory: 638 megabytes
+    Info: Processing ended: Sun Mar 24 23:38:28 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
@@ -84,29 +92,29 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:58:07 on Mar 07,2019
+# Start time: 23:38:30 on Mar 24,2019
 # vlog -work work turbo_encoder.vo 
 # -- Compiling module turbo_encoder
 
 # 
 # Top level modules:
 # 	turbo_encoder
-# End time: 11:58:07 on Mar 07,2019, Elapsed time: 0:00:00
+# End time: 23:38:30 on Mar 24,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:58:07 on Mar 07,2019
+# Start time: 23:38:30 on Mar 24,2019
 # vlog -work work Waveform1.vwf.vt 
-
 # -- Compiling module turbo_encoder_vlg_vec_tst
 # 
 # Top level modules:
 # 	turbo_encoder_vlg_vec_tst
-# End time: 11:58:07 on Mar 07,2019, Elapsed time: 0:00:00
+
+# End time: 23:38:31 on Mar 24,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.turbo_encoder_vlg_vec_tst 
-# Start time: 11:58:07 on Mar 07,2019
+# Start time: 23:38:31 on Mar 24,2019
 # Loading work.turbo_encoder_vlg_vec_tst
 # Loading work.turbo_encoder
 # Loading cyclonev_ver.cyclonev_io_obuf
@@ -123,9 +131,10 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim_ver.common_28nm_ram_pulse_generator
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#25
-# ** Note: $finish    : Waveform1.vwf.vt(82)
+
+# ** Note: $finish    : Waveform1.vwf.vt(94)
 #    Time: 1 us  Iteration: 0  Instance: /turbo_encoder_vlg_vec_tst
-# End time: 11:58:08 on Mar 07,2019, Elapsed time: 0:00:01
+# End time: 23:38:31 on Mar 24,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -138,7 +147,7 @@ Reading C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simu
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim/turbo_encoder_20190307115808.sim.vwf
+Writing the resulting VWF to C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim/turbo_encoder_20190324233831.sim.vwf
 
 Finished VCD to VWF conversion.
 

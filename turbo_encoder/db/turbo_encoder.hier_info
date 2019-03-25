@@ -1,6 +1,6 @@
 |turbo_encoder
-clk => clk.IN19
-rst => rst.IN16
+clk => clk.IN17
+rst => rst.IN14
 length => length.IN2
 data_valid => data_valid.IN1
 ck => ck.IN1
@@ -9,7 +9,7 @@ xk <= xk.DB_MAX_OUTPUT_PORT_TYPE
 zk <= zk.DB_MAX_OUTPUT_PORT_TYPE
 zkp <= zkp.DB_MAX_OUTPUT_PORT_TYPE
 look_now <= look_now.DB_MAX_OUTPUT_PORT_TYPE
-length_out <= dffe_ref:dff1.port0
+length_out <= turbo_fifo:lengthfifo.port7
 current_state[0] <= current_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 current_state[1] <= current_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 current_state[2] <= current_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -19,9 +19,15 @@ zkp_enc <= zkp_enc.DB_MAX_OUTPUT_PORT_TYPE
 xk_trl <= xk_trl.DB_MAX_OUTPUT_PORT_TYPE
 zk_trl <= zk_trl.DB_MAX_OUTPUT_PORT_TYPE
 zkp_trl <= zkp_trl.DB_MAX_OUTPUT_PORT_TYPE
-write_alt_enc <= write_alt_enc~reg0.DB_MAX_OUTPUT_PORT_TYPE
-write_alt_trl <= write_alt_trl~reg0.DB_MAX_OUTPUT_PORT_TYPE
-trl_enable <= trl_enable.DB_MAX_OUTPUT_PORT_TYPE
+write_enc_0 <= write_enc_0.DB_MAX_OUTPUT_PORT_TYPE
+write_enc_1 <= write_enc_1.DB_MAX_OUTPUT_PORT_TYPE
+write_trl_0 <= write_trl_0.DB_MAX_OUTPUT_PORT_TYPE
+write_trl_1 <= write_trl_1.DB_MAX_OUTPUT_PORT_TYPE
+length_delay <= turbo_fifo:lengthfifo.port7
+read_enc_0 <= read_enc_0.DB_MAX_OUTPUT_PORT_TYPE
+read_enc_1 <= read_enc_1.DB_MAX_OUTPUT_PORT_TYPE
+read_trl_0 <= read_trl_0.DB_MAX_OUTPUT_PORT_TYPE
+read_trl_1 <= read_trl_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |turbo_encoder|encoder:encoder1
@@ -349,28 +355,329 @@ trl_clr <= trl_clr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mod_clr <= mod_clr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|turbo_encoder|dffe_ref:dff1
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => q~reg0.DATAIN
-clk => q~reg0.CLK
-en => q~reg0.ENA
-clr => q~reg0.ACLR
+|turbo_encoder|turbo_fifo:lengthfifo
+aclr => aclr.IN1
+clock => clock.IN1
+data[0] => data[0].IN1
+rdreq => rdreq.IN1
+wrreq => wrreq.IN1
+empty <= scfifo:scfifo_component.empty
+full <= scfifo:scfifo_component.full
+q[0] <= scfifo:scfifo_component.q
+usedw[0] <= scfifo:scfifo_component.usedw
+usedw[1] <= scfifo:scfifo_component.usedw
+usedw[2] <= scfifo:scfifo_component.usedw
+usedw[3] <= scfifo:scfifo_component.usedw
+usedw[4] <= scfifo:scfifo_component.usedw
+usedw[5] <= scfifo:scfifo_component.usedw
+usedw[6] <= scfifo:scfifo_component.usedw
+usedw[7] <= scfifo:scfifo_component.usedw
+usedw[8] <= scfifo:scfifo_component.usedw
+usedw[9] <= scfifo:scfifo_component.usedw
+usedw[10] <= scfifo:scfifo_component.usedw
+usedw[11] <= scfifo:scfifo_component.usedw
+usedw[12] <= scfifo:scfifo_component.usedw
 
 
-|turbo_encoder|dffe_ref:dff2
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => q~reg0.DATAIN
-clk => q~reg0.CLK
-en => q~reg0.ENA
-clr => q~reg0.ACLR
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component
+data[0] => scfifo_d6a1:auto_generated.data[0]
+q[0] <= scfifo_d6a1:auto_generated.q[0]
+wrreq => scfifo_d6a1:auto_generated.wrreq
+rdreq => scfifo_d6a1:auto_generated.rdreq
+clock => scfifo_d6a1:auto_generated.clock
+aclr => scfifo_d6a1:auto_generated.aclr
+sclr => ~NO_FANOUT~
+eccstatus[0] <= <UNC>
+eccstatus[1] <= <UNC>
+empty <= scfifo_d6a1:auto_generated.empty
+full <= scfifo_d6a1:auto_generated.full
+almost_full <= <GND>
+almost_empty <= <GND>
+usedw[0] <= scfifo_d6a1:auto_generated.usedw[0]
+usedw[1] <= scfifo_d6a1:auto_generated.usedw[1]
+usedw[2] <= scfifo_d6a1:auto_generated.usedw[2]
+usedw[3] <= scfifo_d6a1:auto_generated.usedw[3]
+usedw[4] <= scfifo_d6a1:auto_generated.usedw[4]
+usedw[5] <= scfifo_d6a1:auto_generated.usedw[5]
+usedw[6] <= scfifo_d6a1:auto_generated.usedw[6]
+usedw[7] <= scfifo_d6a1:auto_generated.usedw[7]
+usedw[8] <= scfifo_d6a1:auto_generated.usedw[8]
+usedw[9] <= scfifo_d6a1:auto_generated.usedw[9]
+usedw[10] <= scfifo_d6a1:auto_generated.usedw[10]
+usedw[11] <= scfifo_d6a1:auto_generated.usedw[11]
+usedw[12] <= scfifo_d6a1:auto_generated.usedw[12]
 
 
-|turbo_encoder|dffe_ref:dff3
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d => q~reg0.DATAIN
-clk => q~reg0.CLK
-en => q~reg0.ENA
-clr => q~reg0.ACLR
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated
+aclr => a_dpfifo_kca1:dpfifo.aclr
+clock => a_dpfifo_kca1:dpfifo.clock
+data[0] => a_dpfifo_kca1:dpfifo.data[0]
+empty <= a_dpfifo_kca1:dpfifo.empty
+full <= a_dpfifo_kca1:dpfifo.full
+q[0] <= a_dpfifo_kca1:dpfifo.q[0]
+rdreq => a_dpfifo_kca1:dpfifo.rreq
+usedw[0] <= a_dpfifo_kca1:dpfifo.usedw[0]
+usedw[1] <= a_dpfifo_kca1:dpfifo.usedw[1]
+usedw[2] <= a_dpfifo_kca1:dpfifo.usedw[2]
+usedw[3] <= a_dpfifo_kca1:dpfifo.usedw[3]
+usedw[4] <= a_dpfifo_kca1:dpfifo.usedw[4]
+usedw[5] <= a_dpfifo_kca1:dpfifo.usedw[5]
+usedw[6] <= a_dpfifo_kca1:dpfifo.usedw[6]
+usedw[7] <= a_dpfifo_kca1:dpfifo.usedw[7]
+usedw[8] <= a_dpfifo_kca1:dpfifo.usedw[8]
+usedw[9] <= a_dpfifo_kca1:dpfifo.usedw[9]
+usedw[10] <= a_dpfifo_kca1:dpfifo.usedw[10]
+usedw[11] <= a_dpfifo_kca1:dpfifo.usedw[11]
+usedw[12] <= a_dpfifo_kca1:dpfifo.usedw[12]
+wrreq => a_dpfifo_kca1:dpfifo.wreq
+
+
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo
+aclr => a_fefifo_3bf:fifo_state.aclr
+aclr => cntr_1ib:rd_ptr_count.aclr
+aclr => cntr_1ib:wr_ptr.aclr
+clock => a_fefifo_3bf:fifo_state.clock
+clock => altsyncram_41t1:FIFOram.clock0
+clock => altsyncram_41t1:FIFOram.clock1
+clock => cntr_1ib:rd_ptr_count.clock
+clock => cntr_1ib:wr_ptr.clock
+data[0] => altsyncram_41t1:FIFOram.data_a[0]
+empty <= a_fefifo_3bf:fifo_state.empty
+full <= a_fefifo_3bf:fifo_state.full
+q[0] <= altsyncram_41t1:FIFOram.q_b[0]
+rreq => a_fefifo_3bf:fifo_state.rreq
+rreq => valid_rreq.IN0
+sclr => a_fefifo_3bf:fifo_state.sclr
+sclr => _.IN0
+sclr => _.IN1
+sclr => cntr_1ib:rd_ptr_count.sclr
+sclr => cntr_1ib:wr_ptr.sclr
+usedw[0] <= a_fefifo_3bf:fifo_state.usedw_out[0]
+usedw[1] <= a_fefifo_3bf:fifo_state.usedw_out[1]
+usedw[2] <= a_fefifo_3bf:fifo_state.usedw_out[2]
+usedw[3] <= a_fefifo_3bf:fifo_state.usedw_out[3]
+usedw[4] <= a_fefifo_3bf:fifo_state.usedw_out[4]
+usedw[5] <= a_fefifo_3bf:fifo_state.usedw_out[5]
+usedw[6] <= a_fefifo_3bf:fifo_state.usedw_out[6]
+usedw[7] <= a_fefifo_3bf:fifo_state.usedw_out[7]
+usedw[8] <= a_fefifo_3bf:fifo_state.usedw_out[8]
+usedw[9] <= a_fefifo_3bf:fifo_state.usedw_out[9]
+usedw[10] <= a_fefifo_3bf:fifo_state.usedw_out[10]
+usedw[11] <= a_fefifo_3bf:fifo_state.usedw_out[11]
+usedw[12] <= a_fefifo_3bf:fifo_state.usedw_out[12]
+wreq => a_fefifo_3bf:fifo_state.wreq
+wreq => valid_wreq.IN0
+
+
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state
+aclr => b_full.IN0
+aclr => b_non_empty.IN0
+aclr => cntr_di7:count_usedw.aclr
+clock => cntr_di7:count_usedw.clock
+clock => b_full.CLK
+clock => b_non_empty.CLK
+empty <= empty.DB_MAX_OUTPUT_PORT_TYPE
+full <= b_full.DB_MAX_OUTPUT_PORT_TYPE
+rreq => _.IN1
+rreq => _.IN0
+rreq => _.IN1
+rreq => valid_rreq.IN0
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN1
+sclr => _.IN0
+sclr => _.IN0
+sclr => cntr_di7:count_usedw.sclr
+usedw_out[0] <= usedw[0].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[1] <= usedw[1].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[2] <= usedw[2].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[3] <= usedw[3].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[4] <= usedw[4].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[5] <= usedw[5].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[6] <= usedw[6].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[7] <= usedw[7].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[8] <= usedw[8].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[9] <= usedw[9].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[10] <= usedw[10].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[11] <= usedw[11].DB_MAX_OUTPUT_PORT_TYPE
+usedw_out[12] <= usedw[12].DB_MAX_OUTPUT_PORT_TYPE
+wreq => _.IN1
+wreq => _.IN1
+wreq => _.IN0
+wreq => valid_wreq.IN0
+
+
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw
+aclr => counter_reg_bit[12].IN0
+clock => counter_reg_bit[12].CLK
+clock => counter_reg_bit[11].CLK
+clock => counter_reg_bit[10].CLK
+clock => counter_reg_bit[9].CLK
+clock => counter_reg_bit[8].CLK
+clock => counter_reg_bit[7].CLK
+clock => counter_reg_bit[6].CLK
+clock => counter_reg_bit[5].CLK
+clock => counter_reg_bit[4].CLK
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => _.IN0
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter_reg_bit[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter_reg_bit[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= counter_reg_bit[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= counter_reg_bit[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= counter_reg_bit[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= counter_reg_bit[12].DB_MAX_OUTPUT_PORT_TYPE
+sclr => _.IN1
+sclr => counter_reg_bit[12].SCLR
+sclr => counter_reg_bit[11].SCLR
+sclr => counter_reg_bit[10].SCLR
+sclr => counter_reg_bit[9].SCLR
+sclr => counter_reg_bit[8].SCLR
+sclr => counter_reg_bit[7].SCLR
+sclr => counter_reg_bit[6].SCLR
+sclr => counter_reg_bit[5].SCLR
+sclr => counter_reg_bit[4].SCLR
+sclr => counter_reg_bit[3].SCLR
+sclr => counter_reg_bit[2].SCLR
+sclr => counter_reg_bit[1].SCLR
+sclr => counter_reg_bit[0].SCLR
+updown => updown_other_bits.IN1
+updown => counter_comb_bita0.DATAF
+
+
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[8] => ram_block1a0.PORTAADDR8
+address_a[9] => ram_block1a0.PORTAADDR9
+address_a[10] => ram_block1a0.PORTAADDR10
+address_a[11] => ram_block1a0.PORTAADDR11
+address_a[12] => ram_block1a0.PORTAADDR12
+address_b[0] => ram_block1a0.PORTBADDR
+address_b[1] => ram_block1a0.PORTBADDR1
+address_b[2] => ram_block1a0.PORTBADDR2
+address_b[3] => ram_block1a0.PORTBADDR3
+address_b[4] => ram_block1a0.PORTBADDR4
+address_b[5] => ram_block1a0.PORTBADDR5
+address_b[6] => ram_block1a0.PORTBADDR6
+address_b[7] => ram_block1a0.PORTBADDR7
+address_b[8] => ram_block1a0.PORTBADDR8
+address_b[9] => ram_block1a0.PORTBADDR9
+address_b[10] => ram_block1a0.PORTBADDR10
+address_b[11] => ram_block1a0.PORTBADDR11
+address_b[12] => ram_block1a0.PORTBADDR12
+clock0 => ram_block1a0.CLK0
+clock1 => ram_block1a0.CLK1
+clocken1 => ram_block1a0.ENA1
+data_a[0] => ram_block1a0.PORTADATAIN
+q_b[0] <= ram_block1a0.PORTBDATAOUT
+wren_a => ram_block1a0.PORTAWE
+wren_a => ram_block1a0.ENA0
+
+
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count
+aclr => counter_reg_bit[12].IN0
+clock => counter_reg_bit[12].CLK
+clock => counter_reg_bit[11].CLK
+clock => counter_reg_bit[10].CLK
+clock => counter_reg_bit[9].CLK
+clock => counter_reg_bit[8].CLK
+clock => counter_reg_bit[7].CLK
+clock => counter_reg_bit[6].CLK
+clock => counter_reg_bit[5].CLK
+clock => counter_reg_bit[4].CLK
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => _.IN0
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter_reg_bit[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter_reg_bit[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= counter_reg_bit[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= counter_reg_bit[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= counter_reg_bit[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= counter_reg_bit[12].DB_MAX_OUTPUT_PORT_TYPE
+sclr => _.IN1
+sclr => counter_reg_bit[12].SCLR
+sclr => counter_reg_bit[11].SCLR
+sclr => counter_reg_bit[10].SCLR
+sclr => counter_reg_bit[9].SCLR
+sclr => counter_reg_bit[8].SCLR
+sclr => counter_reg_bit[7].SCLR
+sclr => counter_reg_bit[6].SCLR
+sclr => counter_reg_bit[5].SCLR
+sclr => counter_reg_bit[4].SCLR
+sclr => counter_reg_bit[3].SCLR
+sclr => counter_reg_bit[2].SCLR
+sclr => counter_reg_bit[1].SCLR
+sclr => counter_reg_bit[0].SCLR
+
+
+|turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr
+aclr => counter_reg_bit[12].IN0
+clock => counter_reg_bit[12].CLK
+clock => counter_reg_bit[11].CLK
+clock => counter_reg_bit[10].CLK
+clock => counter_reg_bit[9].CLK
+clock => counter_reg_bit[8].CLK
+clock => counter_reg_bit[7].CLK
+clock => counter_reg_bit[6].CLK
+clock => counter_reg_bit[5].CLK
+clock => counter_reg_bit[4].CLK
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => _.IN0
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter_reg_bit[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter_reg_bit[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= counter_reg_bit[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= counter_reg_bit[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= counter_reg_bit[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= counter_reg_bit[12].DB_MAX_OUTPUT_PORT_TYPE
+sclr => _.IN1
+sclr => counter_reg_bit[12].SCLR
+sclr => counter_reg_bit[11].SCLR
+sclr => counter_reg_bit[10].SCLR
+sclr => counter_reg_bit[9].SCLR
+sclr => counter_reg_bit[8].SCLR
+sclr => counter_reg_bit[7].SCLR
+sclr => counter_reg_bit[6].SCLR
+sclr => counter_reg_bit[5].SCLR
+sclr => counter_reg_bit[4].SCLR
+sclr => counter_reg_bit[3].SCLR
+sclr => counter_reg_bit[2].SCLR
+sclr => counter_reg_bit[1].SCLR
+sclr => counter_reg_bit[0].SCLR
 
 
 |turbo_encoder|turbo_fifo:fifo1_enc

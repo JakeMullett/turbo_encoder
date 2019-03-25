@@ -60,15 +60,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "write_alt_enc",
+					"name" : "write_enc_0",
 					"strict" : false
 				},
 				{
-					"name" : "write_alt_trl",
+					"name" : "write_enc_1",
 					"strict" : false
 				},
 				{
-					"name" : "trl_enable",
+					"name" : "write_trl_0",
+					"strict" : false
+				},
+				{
+					"name" : "write_trl_1",
+					"strict" : false
+				},
+				{
+					"name" : "length_delay",
+					"strict" : false
+				},
+				{
+					"name" : "read_enc_0",
+					"strict" : false
+				},
+				{
+					"name" : "read_enc_1",
+					"strict" : false
+				},
+				{
+					"name" : "read_trl_0",
+					"strict" : false
+				},
+				{
+					"name" : "read_trl_1",
 					"strict" : false
 				},
 				{

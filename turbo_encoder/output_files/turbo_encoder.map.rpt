@@ -1,5 +1,5 @@
 Analysis & Synthesis report for turbo_encoder
-Thu Mar 07 11:56:38 2019
+Sun Mar 24 23:36:49 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,10 +16,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram
  15. Source assignments for turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram
  16. Source assignments for turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram
  17. Source assignments for turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram
@@ -37,44 +37,43 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  29. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component
  30. Parameter Settings for User Entity Instance: trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component
  31. Parameter Settings for User Entity Instance: fsm:control
- 32. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_enc|scfifo:scfifo_component
- 33. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_enc|scfifo:scfifo_component
- 34. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_enc|scfifo:scfifo_component
- 35. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_trl|scfifo:scfifo_component
- 36. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_trl|scfifo:scfifo_component
- 37. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_trl|scfifo:scfifo_component
- 38. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component
- 39. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component
- 40. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component
- 41. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component
- 42. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component
- 43. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component
- 44. lpm_shiftreg Parameter Settings by Entity Instance
- 45. scfifo Parameter Settings by Entity Instance
- 46. Port Connectivity Checks: "turbo_fifo:fifo3_trl_alt"
- 47. Port Connectivity Checks: "turbo_fifo:fifo2_trl_alt"
- 48. Port Connectivity Checks: "turbo_fifo:fifo1_trl_alt"
- 49. Port Connectivity Checks: "turbo_fifo:fifo3_enc_alt"
- 50. Port Connectivity Checks: "turbo_fifo:fifo2_enc_alt"
- 51. Port Connectivity Checks: "turbo_fifo:fifo1_enc_alt"
- 52. Port Connectivity Checks: "turbo_fifo:fifo3_trl"
- 53. Port Connectivity Checks: "turbo_fifo:fifo2_trl"
- 54. Port Connectivity Checks: "turbo_fifo:fifo1_trl"
- 55. Port Connectivity Checks: "turbo_fifo:fifo3_enc"
- 56. Port Connectivity Checks: "turbo_fifo:fifo2_enc"
- 57. Port Connectivity Checks: "turbo_fifo:fifo1_enc"
- 58. Port Connectivity Checks: "dffe_ref:dff3"
- 59. Port Connectivity Checks: "dffe_ref:dff2"
- 60. Port Connectivity Checks: "dffe_ref:dff1"
- 61. Port Connectivity Checks: "fsm:control"
- 62. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"
- 63. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd1"
- 64. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd0"
- 65. Port Connectivity Checks: "encoder:encoder2"
- 66. Post-Synthesis Netlist Statistics for Top Partition
- 67. Elapsed Time Per Partition
- 68. Analysis & Synthesis Messages
- 69. Analysis & Synthesis Suppressed Messages
+ 32. Parameter Settings for User Entity Instance: turbo_fifo:lengthfifo|scfifo:scfifo_component
+ 33. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_enc|scfifo:scfifo_component
+ 34. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_enc|scfifo:scfifo_component
+ 35. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_enc|scfifo:scfifo_component
+ 36. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_trl|scfifo:scfifo_component
+ 37. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_trl|scfifo:scfifo_component
+ 38. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_trl|scfifo:scfifo_component
+ 39. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component
+ 40. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component
+ 41. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component
+ 42. Parameter Settings for User Entity Instance: turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component
+ 43. Parameter Settings for User Entity Instance: turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component
+ 44. Parameter Settings for User Entity Instance: turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component
+ 45. lpm_shiftreg Parameter Settings by Entity Instance
+ 46. scfifo Parameter Settings by Entity Instance
+ 47. Port Connectivity Checks: "turbo_fifo:fifo3_trl_alt"
+ 48. Port Connectivity Checks: "turbo_fifo:fifo2_trl_alt"
+ 49. Port Connectivity Checks: "turbo_fifo:fifo1_trl_alt"
+ 50. Port Connectivity Checks: "turbo_fifo:fifo3_enc_alt"
+ 51. Port Connectivity Checks: "turbo_fifo:fifo2_enc_alt"
+ 52. Port Connectivity Checks: "turbo_fifo:fifo1_enc_alt"
+ 53. Port Connectivity Checks: "turbo_fifo:fifo3_trl"
+ 54. Port Connectivity Checks: "turbo_fifo:fifo2_trl"
+ 55. Port Connectivity Checks: "turbo_fifo:fifo1_trl"
+ 56. Port Connectivity Checks: "turbo_fifo:fifo3_enc"
+ 57. Port Connectivity Checks: "turbo_fifo:fifo2_enc"
+ 58. Port Connectivity Checks: "turbo_fifo:fifo1_enc"
+ 59. Port Connectivity Checks: "turbo_fifo:lengthfifo"
+ 60. Port Connectivity Checks: "fsm:control"
+ 61. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"
+ 62. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd1"
+ 63. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd0"
+ 64. Port Connectivity Checks: "encoder:encoder2"
+ 65. Post-Synthesis Netlist Statistics for Top Partition
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
+ 68. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -100,16 +99,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Mar 07 11:56:38 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar 24 23:36:49 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; turbo_encoder                               ;
 ; Top-level Entity Name           ; turbo_encoder                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 437                                         ;
-; Total pins                      ; 23                                          ;
+; Total registers                 ; 597                                         ;
+; Total pins                      ; 29                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 73,734                                      ;
+; Total block memory bits         ; 106,496                                     ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -260,27 +259,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 308       ;
+; Estimate of Logic utilization (ALMs needed) ; 445       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 570       ;
-;     -- 7 input functions                    ; 3         ;
-;     -- 6 input functions                    ; 41        ;
-;     -- 5 input functions                    ; 65        ;
-;     -- 4 input functions                    ; 26        ;
-;     -- <=3 input functions                  ; 435       ;
+; Combinational ALUT usage for logic          ; 789       ;
+;     -- 7 input functions                    ; 2         ;
+;     -- 6 input functions                    ; 98        ;
+;     -- 5 input functions                    ; 50        ;
+;     -- 4 input functions                    ; 27        ;
+;     -- <=3 input functions                  ; 612       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 437       ;
+; Dedicated logic registers                   ; 597       ;
 ;                                             ;           ;
-; I/O pins                                    ; 23        ;
+; I/O pins                                    ; 29        ;
 ; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 73734     ;
+; Total block memory bits                     ; 106496    ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 449       ;
-; Total fan-out                               ; 3670      ;
-; Average fan-out                             ; 3.45      ;
+; Maximum fan-out                             ; 610       ;
+; Total fan-out                               ; 5100      ;
+; Average fan-out                             ; 3.50      ;
 +---------------------------------------------+-----------+
 
 
@@ -289,10 +288,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                          ; Entity Name     ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |turbo_encoder                                 ; 570 (41)            ; 437 (25)                  ; 73734             ; 0          ; 23   ; 0            ; |turbo_encoder                                                                                                                                               ; turbo_encoder   ; work         ;
-;    |dffe_ref:dff1|                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|dffe_ref:dff1                                                                                                                                 ; dffe_ref        ; work         ;
-;    |dffe_ref:dff2|                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|dffe_ref:dff2                                                                                                                                 ; dffe_ref        ; work         ;
-;    |dffe_ref:dff3|                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|dffe_ref:dff3                                                                                                                                 ; dffe_ref        ; work         ;
+; |turbo_encoder                                 ; 789 (60)            ; 597 (24)                  ; 106496            ; 0          ; 29   ; 0            ; |turbo_encoder                                                                                                                                               ; turbo_encoder   ; work         ;
 ;    |encoder:encoder1|                          ; 5 (5)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1                                                                                                                              ; encoder         ; work         ;
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D0                                                                                                                  ; dffe_ref        ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D1                                                                                                                  ; dffe_ref        ; work         ;
@@ -301,7 +297,7 @@ refer to the applicable agreement for further details.
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D0                                                                                                                  ; dffe_ref        ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D1                                                                                                                  ; dffe_ref        ; work         ;
 ;       |dffe_ref:D2|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D2                                                                                                                  ; dffe_ref        ; work         ;
-;    |fsm:control|                               ; 57 (57)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                                                                                   ; fsm             ; work         ;
+;    |fsm:control|                               ; 59 (59)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                                                                                   ; fsm             ; work         ;
 ;    |trellisterm:termination|                   ; 11 (4)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination                                                                                                                       ; trellisterm     ; work         ;
 ;       |trellshift:shiftd0|                     ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0                                                                                                    ; trellshift      ; work         ;
 ;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component                                                                ; lpm_shiftreg    ; work         ;
@@ -312,31 +308,35 @@ refer to the applicable agreement for further details.
 ;    |turbo_fifo:fifo1_enc_alt|                  ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt                                                                                                                      ; turbo_fifo      ; work         ;
 ;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
 ;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
-;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 24 (11)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                      ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                        ; cntr_1ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                              ; cntr_1ib        ; work         ;
-;    |turbo_fifo:fifo1_enc|                      ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc                                                                                                                          ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
-;          |scfifo_d6a1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
-;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
-;    |turbo_fifo:fifo1_trl_alt|                  ; 51 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt                                                                                                                      ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 51 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
-;          |scfifo_d6a1:auto_generated|          ; 51 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 51 (2)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
+;    |turbo_fifo:fifo1_enc|                      ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc                                                                                                                          ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
+;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
+;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw     ; cntr_di7        ; work         ;
+;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
+;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                            ; cntr_1ib        ; work         ;
+;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                                  ; cntr_1ib        ; work         ;
+;    |turbo_fifo:fifo1_trl_alt|                  ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt                                                                                                                      ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
+;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
 ;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                      ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                        ; cntr_1ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                              ; cntr_1ib        ; work         ;
-;    |turbo_fifo:fifo1_trl|                      ; 51 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl                                                                                                                          ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 51 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
-;          |scfifo_d6a1:auto_generated|          ; 51 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 51 (2)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
-;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
+;    |turbo_fifo:fifo1_trl|                      ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl                                                                                                                          ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
+;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 24 (11)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw     ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                            ; cntr_1ib        ; work         ;
@@ -344,17 +344,21 @@ refer to the applicable agreement for further details.
 ;    |turbo_fifo:fifo2_enc_alt|                  ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt                                                                                                                      ; turbo_fifo      ; work         ;
 ;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
 ;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 50 (2)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
-;                |a_fefifo_3bf:fifo_state|       ; 22 (9)              ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                      ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                        ; cntr_1ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                              ; cntr_1ib        ; work         ;
-;    |turbo_fifo:fifo2_enc|                      ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc                                                                                                                          ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
-;          |scfifo_d6a1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
-;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
+;    |turbo_fifo:fifo2_enc|                      ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc                                                                                                                          ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
+;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 24 (11)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
+;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw     ; cntr_di7        ; work         ;
+;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
+;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                            ; cntr_1ib        ; work         ;
+;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                                  ; cntr_1ib        ; work         ;
 ;    |turbo_fifo:fifo2_trl_alt|                  ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt                                                                                                                      ; turbo_fifo      ; work         ;
 ;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
 ;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
@@ -367,8 +371,8 @@ refer to the applicable agreement for further details.
 ;    |turbo_fifo:fifo2_trl|                      ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl                                                                                                                          ; turbo_fifo      ; work         ;
 ;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
 ;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 50 (2)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
-;                |a_fefifo_3bf:fifo_state|       ; 22 (9)              ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw     ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                            ; cntr_1ib        ; work         ;
@@ -376,22 +380,26 @@ refer to the applicable agreement for further details.
 ;    |turbo_fifo:fifo3_enc_alt|                  ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt                                                                                                                      ; turbo_fifo      ; work         ;
 ;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
 ;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
-;                |a_fefifo_3bf:fifo_state|       ; 24 (11)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (2)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 22 (9)              ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                      ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                        ; cntr_1ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                              ; cntr_1ib        ; work         ;
-;    |turbo_fifo:fifo3_enc|                      ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc                                                                                                                          ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
-;          |scfifo_d6a1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
-;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 2                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
+;    |turbo_fifo:fifo3_enc|                      ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc                                                                                                                          ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component                                                                                                  ; scfifo          ; work         ;
+;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                       ; scfifo_d6a1     ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                  ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 24 (11)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                          ; a_fefifo_3bf    ; work         ;
+;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw     ; cntr_di7        ; work         ;
+;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
+;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                            ; cntr_1ib        ; work         ;
+;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                                  ; cntr_1ib        ; work         ;
 ;    |turbo_fifo:fifo3_trl_alt|                  ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt                                                                                                                      ; turbo_fifo      ; work         ;
 ;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
 ;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                   ; scfifo_d6a1     ; work         ;
-;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
-;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (2)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                              ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 22 (9)              ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                      ; a_fefifo_3bf    ; work         ;
 ;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw ; cntr_di7        ; work         ;
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                      ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                        ; cntr_1ib        ; work         ;
@@ -405,6 +413,15 @@ refer to the applicable agreement for further details.
 ;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                          ; altsyncram_41t1 ; work         ;
 ;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                            ; cntr_1ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                                  ; cntr_1ib        ; work         ;
+;    |turbo_fifo:lengthfifo|                     ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo                                                                                                                         ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component                                                                                                 ; scfifo          ; work         ;
+;          |scfifo_d6a1:auto_generated|          ; 50 (0)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated                                                                      ; scfifo_d6a1     ; work         ;
+;             |a_dpfifo_kca1:dpfifo|             ; 50 (1)              ; 41 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo                                                 ; a_dpfifo_kca1   ; work         ;
+;                |a_fefifo_3bf:fifo_state|       ; 23 (10)             ; 15 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state                         ; a_fefifo_3bf    ; work         ;
+;                   |cntr_di7:count_usedw|       ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw    ; cntr_di7        ; work         ;
+;                |altsyncram_41t1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram                         ; altsyncram_41t1 ; work         ;
+;                |cntr_1ib:rd_ptr_count|         ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count                           ; cntr_1ib        ; work         ;
+;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr                                 ; cntr_1ib        ; work         ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -426,6 +443,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 8192         ; 1            ; 8192         ; 1            ; 8192 ; None ;
 ; turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 1            ; 8192         ; 1            ; 8192 ; None ;
 ; turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 8192         ; 1            ; 8192         ; 1            ; 8192 ; None ;
+; turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM    ; AUTO ; Simple Dual Port ; 8192         ; 1            ; 8192         ; 1            ; 8192 ; None ;
 +-------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
@@ -446,159 +464,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; FIFO         ; 18.1    ; N/A          ; N/A          ; |turbo_encoder|turbo_fifo:fifo3_enc_alt ; turbo_fifo.v    ;
 ; Altera ; FIFO         ; 18.1    ; N/A          ; N/A          ; |turbo_encoder|turbo_fifo:fifo3_trl     ; turbo_fifo.v    ;
 ; Altera ; FIFO         ; 18.1    ; N/A          ; N/A          ; |turbo_encoder|turbo_fifo:fifo3_trl_alt ; turbo_fifo.v    ;
+; Altera ; FIFO         ; 18.1    ; N/A          ; N/A          ; |turbo_encoder|turbo_fifo:lengthfifo    ; turbo_fifo.v    ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------------+-----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                    ;
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                    ; Reason for Removal                                                                                 ;
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3]                                                                           ; Merged with trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ;
-; write_enc_0                                                                                                                                                      ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[0..12]                              ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[0..12]                              ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[0..12]                              ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_full                                      ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_full                                      ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_full                                      ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_non_empty                                 ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_non_empty                                 ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_non_empty                                 ; Stuck at GND due to stuck port data_in                                                             ;
-; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[0..12]                        ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[0..12] ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[0..12]                        ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[0..12] ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[0..12]                        ; Stuck at GND due to stuck port clock_enable                                                        ;
-; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[0..12] ; Stuck at GND due to stuck port clock_enable                                                        ;
-; read_enc_0                                                                                                                                                       ; Stuck at GND due to stuck port data_in                                                             ;
-; Total Number of Removed Registers = 126                                                                                                                          ;                                                                                                    ;
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                              ;
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                               ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                         ;
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; write_enc_0                                                                                                                 ; Stuck at GND              ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[12],                              ;
-;                                                                                                                             ; due to stuck port data_in ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[11],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[10],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[9],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[8],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[7],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[6],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[5],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[4],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[3],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[2],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[1],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[12],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[11],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[10],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[9],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[8],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[7],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[6],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[5],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[4],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[3],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[2],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[1],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[12],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[11],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[10],                              ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[9],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[8],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[7],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[6],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[5],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[4],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[3],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[2],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:wr_ptr|counter_reg_bit[1],                               ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[6],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[5],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[4],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[3],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[2],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[1],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[0],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[6],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[5],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[4],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[3],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[2],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[1],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[0],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[6],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[5],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[4],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[3],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[2],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[1],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[0]   ;
-; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_full ; Stuck at GND              ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_non_empty,                              ;
-;                                                                                                                             ; due to stuck port data_in ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[12],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[11],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[10],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[9],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[8],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[7],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[6],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[5],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[4],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[3],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[2],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[1],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[0],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[12], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[11], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[10], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[9],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[8],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[7]   ;
-; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_full ; Stuck at GND              ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_non_empty,                              ;
-;                                                                                                                             ; due to stuck port data_in ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[12],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[11],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[10],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[9],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[8],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[7],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[6],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[5],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[4],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[3],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[2],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[1],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[0],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[12], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[11], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[10], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[9],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[8],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[7]   ;
-; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_full ; Stuck at GND              ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|b_non_empty,                              ;
-;                                                                                                                             ; due to stuck port data_in ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[12],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[11],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[10],                        ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[9],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[8],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[7],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[6],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[5],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[4],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[3],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[2],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[1],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count|counter_reg_bit[0],                         ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[12], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[11], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[10], ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[9],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[8],  ;
-;                                                                                                                             ;                           ; turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw|counter_reg_bit[7]   ;
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                          ;
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+; Register name                                                                          ; Reason for Removal                                                                                 ;
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+; trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ; Merged with trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ;
+; Total Number of Removed Registers = 1                                                  ;                                                                                                    ;
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -606,12 +483,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 437   ;
-; Number of registers using Synchronous Clear  ; 37    ;
+; Total registers                              ; 597   ;
+; Number of registers using Synchronous Clear  ; 45    ;
 ; Number of registers using Synchronous Load   ; 5     ;
-; Number of registers using Asynchronous Clear ; 389   ;
+; Number of registers using Asynchronous Clear ; 550   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 387   ;
+; Number of registers using Clock Enable       ; 542   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -621,7 +498,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; current_state[2]~reg0                  ; 8       ;
+; current_state[2]~reg0                  ; 15      ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -631,12 +508,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |turbo_encoder|write_trl_0                    ;
-; 7:1                ; 14 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |turbo_encoder|length_counter[4]              ;
+; 7:1                ; 14 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |turbo_encoder|length_counter[0]              ;
 ; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |turbo_encoder|fsm:control|current_state[1]   ;
 ; 14:1               ; 14 bits   ; 126 LEs       ; 0 LEs                ; 126 LEs                ; Yes        ; |turbo_encoder|fsm:control|length_counter[13] ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |turbo_encoder|zk                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                             ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                              ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -826,6 +711,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ENCTERM        ; 1     ; Signed Integer                  ;
 ; ENCMOD         ; 4     ; Signed Integer                  ;
 +----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: turbo_fifo:lengthfifo|scfifo:scfifo_component ;
++-------------------------+-------------+----------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                               ;
++-------------------------+-------------+----------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                     ;
+; lpm_width               ; 1           ; Signed Integer                                     ;
+; LPM_NUMWORDS            ; 8192        ; Signed Integer                                     ;
+; LPM_WIDTHU              ; 13          ; Signed Integer                                     ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                            ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                            ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                            ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                            ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                            ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                            ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                            ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                            ;
+; USE_EAB                 ; ON          ; Untyped                                            ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                            ;
+; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                            ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                            ;
+; CBXI_PARAMETER          ; scfifo_d6a1 ; Untyped                                            ;
++-------------------------+-------------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1200,7 +1114,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+--------------------------------------------------+
 ; Name                       ; Value                                            ;
 +----------------------------+--------------------------------------------------+
-; Number of entity instances ; 12                                               ;
+; Number of entity instances ; 13                                               ;
+; Entity Instance            ; turbo_fifo:lengthfifo|scfifo:scfifo_component    ;
+;     -- FIFO Type           ; Single Clock                                     ;
+;     -- lpm_width           ; 1                                                ;
+;     -- LPM_NUMWORDS        ; 8192                                             ;
+;     -- LPM_SHOWAHEAD       ; OFF                                              ;
+;     -- USE_EAB             ; ON                                               ;
 ; Entity Instance            ; turbo_fifo:fifo1_enc|scfifo:scfifo_component     ;
 ;     -- FIFO Type           ; Single Clock                                     ;
 ;     -- lpm_width           ; 1                                                ;
@@ -1276,163 +1196,147 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+--------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo3_trl_alt" ;
-+-------+--------+----------+--------------------------+
-; Port  ; Type   ; Severity ; Details                  ;
-+-------+--------+----------+--------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected   ;
-; full  ; Output ; Info     ; Explicitly unconnected   ;
-; usedw ; Output ; Info     ; Explicitly unconnected   ;
-+-------+--------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo3_trl_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo2_trl_alt" ;
-+-------+--------+----------+--------------------------+
-; Port  ; Type   ; Severity ; Details                  ;
-+-------+--------+----------+--------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected   ;
-; full  ; Output ; Info     ; Explicitly unconnected   ;
-; usedw ; Output ; Info     ; Explicitly unconnected   ;
-+-------+--------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo2_trl_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo1_trl_alt" ;
-+-------+--------+----------+--------------------------+
-; Port  ; Type   ; Severity ; Details                  ;
-+-------+--------+----------+--------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected   ;
-; full  ; Output ; Info     ; Explicitly unconnected   ;
-; usedw ; Output ; Info     ; Explicitly unconnected   ;
-+-------+--------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo1_trl_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo3_enc_alt" ;
-+-------+--------+----------+--------------------------+
-; Port  ; Type   ; Severity ; Details                  ;
-+-------+--------+----------+--------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected   ;
-; full  ; Output ; Info     ; Explicitly unconnected   ;
-; usedw ; Output ; Info     ; Explicitly unconnected   ;
-+-------+--------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo3_enc_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo2_enc_alt" ;
-+-------+--------+----------+--------------------------+
-; Port  ; Type   ; Severity ; Details                  ;
-+-------+--------+----------+--------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected   ;
-; full  ; Output ; Info     ; Explicitly unconnected   ;
-; usedw ; Output ; Info     ; Explicitly unconnected   ;
-+-------+--------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo2_enc_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo1_enc_alt" ;
-+-------+--------+----------+--------------------------+
-; Port  ; Type   ; Severity ; Details                  ;
-+-------+--------+----------+--------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected   ;
-; full  ; Output ; Info     ; Explicitly unconnected   ;
-; usedw ; Output ; Info     ; Explicitly unconnected   ;
-+-------+--------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo1_enc_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo3_trl"   ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected ;
-; full  ; Output ; Info     ; Explicitly unconnected ;
-; usedw ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo3_trl"                                                                                     ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo2_trl"   ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected ;
-; full  ; Output ; Info     ; Explicitly unconnected ;
-; usedw ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo2_trl"                                                                                     ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo1_trl"   ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected ;
-; full  ; Output ; Info     ; Explicitly unconnected ;
-; usedw ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo1_trl"                                                                                     ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo3_enc"   ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected ;
-; full  ; Output ; Info     ; Explicitly unconnected ;
-; usedw ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo3_enc"                                                                                     ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo2_enc"   ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected ;
-; full  ; Output ; Info     ; Explicitly unconnected ;
-; usedw ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo2_enc"                                                                                     ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo1_enc"   ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; empty ; Output ; Info     ; Explicitly unconnected ;
-; full  ; Output ; Info     ; Explicitly unconnected ;
-; usedw ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo1_enc"                                                                                     ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------+
-; Port Connectivity Checks: "dffe_ref:dff3" ;
-+------+-------+----------+-----------------+
-; Port ; Type  ; Severity ; Details         ;
-+------+-------+----------+-----------------+
-; en   ; Input ; Info     ; Stuck at VCC    ;
-+------+-------+----------+-----------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "dffe_ref:dff2" ;
-+------+-------+----------+-----------------+
-; Port ; Type  ; Severity ; Details         ;
-+------+-------+----------+-----------------+
-; en   ; Input ; Info     ; Stuck at VCC    ;
-+------+-------+----------+-----------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "dffe_ref:dff1" ;
-+------+-------+----------+-----------------+
-; Port ; Type  ; Severity ; Details         ;
-+------+-------+----------+-----------------+
-; en   ; Input ; Info     ; Stuck at VCC    ;
-+------+-------+----------+-----------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:lengthfifo"                                                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; full  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; usedw ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -1489,34 +1393,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 437                         ;
-;     CLR               ; 28                          ;
+; arriav_ff             ; 597                         ;
+;     CLR               ; 24                          ;
+;     CLR SCLR          ; 9                           ;
 ;     CLR SLD           ; 4                           ;
-;     ENA               ; 2                           ;
-;     ENA CLR           ; 357                         ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 513                         ;
 ;     ENA SCLR          ; 28                          ;
-;     SCLR              ; 9                           ;
+;     SCLR              ; 8                           ;
 ;     SLD               ; 1                           ;
-;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 571                         ;
-;     arith             ; 379                         ;
-;         1 data inputs ; 271                         ;
-;         2 data inputs ; 108                         ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 189                         ;
-;         0 data inputs ; 1                           ;
+;     plain             ; 9                           ;
+; arriav_lcell_comb     ; 790                         ;
+;     arith             ; 535                         ;
+;         1 data inputs ; 379                         ;
+;         2 data inputs ; 156                         ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 253                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 41                          ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 26                          ;
-;         5 data inputs ; 65                          ;
-;         6 data inputs ; 41                          ;
-; boundary_port         ; 23                          ;
-; stratixv_ram_block    ; 12                          ;
+;         2 data inputs ; 56                          ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 27                          ;
+;         5 data inputs ; 50                          ;
+;         6 data inputs ; 98                          ;
+; boundary_port         ; 29                          ;
+; stratixv_ram_block    ; 13                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.13                        ;
+; Average LUT depth     ; 2.07                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1525,7 +1429,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1535,7 +1439,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Mar 07 11:56:19 2019
+    Info: Processing started: Sun Mar 24 23:36:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1549,28 +1453,44 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /users/eap42/documents/ece559/project/turbo_encoder/encoder/dffe_ref.v
     Info (12023): Found entity 1: dffe_ref File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/dffe_ref.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(162): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 162
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(163): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 163
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(164): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 164
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(165): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 165
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(166): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 166
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(167): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 167
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(169): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 169
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(170): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 170
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(171): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 171
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(172): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 172
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(173): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 173
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(174): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 174
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_encoder.v
     Info (12023): Found entity 1: turbo_encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_fifo.v
     Info (12023): Found entity 1: turbo_fifo File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at turbo_encoder.v(20): created implicit net for "xkp_enc" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at turbo_encoder.v(77): created implicit net for "write_delay" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 77
-Warning (10236): Verilog HDL Implicit Net warning at turbo_encoder.v(78): created implicit net for "switch_delay" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file read_fsm.v
+    Info (12023): Found entity 1: read_fsm File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/read_fsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bitshift.v
+    Info (12023): Found entity 1: bitshift File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/bitshift.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at turbo_encoder.v(22): created implicit net for "xkp_enc" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 22
 Info (12127): Elaborating entity "turbo_encoder" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(99): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 99
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(84): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 84
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(89): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 89
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(95): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 95
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(102): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 102
 Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(104): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 104
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(110): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 110
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(116): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 116
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(118): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 118
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(126): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 126
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(128): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 128
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(135): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 135
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(137): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 137
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(145): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 145
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(147): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 147
-Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 19
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(113): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 113
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(115): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 115
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(121): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 121
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(130): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 130
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(132): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 132
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(141): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 141
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(143): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 143
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(149): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 149
+Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 21
 Info (12128): Elaborating entity "dffe_ref" for hierarchy "encoder:encoder1|dffe_ref:D2" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 23
-Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 22
+Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 24
 Warning (10036): Verilog HDL or VHDL warning at trellisterm.v(7): object "alt" assigned a value but never read File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v Line: 7
 Info (12128): Elaborating entity "trellshift" for hierarchy "trellisterm:termination|trellshift:shiftd0" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v Line: 29
 Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellshift.v Line: 70
@@ -1579,7 +1499,7 @@ Info (12133): Instantiated megafunction "trellisterm:termination|trellshift:shif
     Info (12134): Parameter "lpm_direction" = "RIGHT"
     Info (12134): Parameter "lpm_type" = "LPM_SHIFTREG"
     Info (12134): Parameter "lpm_width" = "4"
-Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 24
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 26
 Warning (10230): Verilog HDL assignment warning at fsm.v(32): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 32
 Warning (10230): Verilog HDL assignment warning at fsm.v(41): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 41
 Warning (10230): Verilog HDL assignment warning at fsm.v(53): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 53
@@ -1593,10 +1513,10 @@ Warning (10230): Verilog HDL assignment warning at fsm.v(105): truncated value w
 Warning (10230): Verilog HDL assignment warning at fsm.v(112): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 112
 Warning (10230): Verilog HDL assignment warning at fsm.v(119): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 119
 Warning (10230): Verilog HDL assignment warning at fsm.v(127): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 127
-Info (12128): Elaborating entity "turbo_fifo" for hierarchy "turbo_fifo:fifo1_enc" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 158
-Info (12128): Elaborating entity "scfifo" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
-Info (12130): Elaborated megafunction instantiation "turbo_fifo:fifo1_enc|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
-Info (12133): Instantiated megafunction "turbo_fifo:fifo1_enc|scfifo:scfifo_component" with the following parameter: File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
+Info (12128): Elaborating entity "turbo_fifo" for hierarchy "turbo_fifo:lengthfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 60
+Info (12128): Elaborating entity "scfifo" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
+Info (12130): Elaborated megafunction instantiation "turbo_fifo:lengthfifo|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
+Info (12133): Instantiated megafunction "turbo_fifo:lengthfifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_numwords" = "8192"
@@ -1609,39 +1529,37 @@ Info (12133): Instantiated megafunction "turbo_fifo:fifo1_enc|scfifo:scfifo_comp
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_d6a1.tdf
     Info (12023): Found entity 1: scfifo_d6a1 File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/scfifo_d6a1.tdf Line: 24
-Info (12128): Elaborating entity "scfifo_d6a1" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf Line: 299
+Info (12128): Elaborating entity "scfifo_d6a1" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf Line: 299
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_kca1.tdf
     Info (12023): Found entity 1: a_dpfifo_kca1 File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 28
-Info (12128): Elaborating entity "a_dpfifo_kca1" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/scfifo_d6a1.tdf Line: 37
+Info (12128): Elaborating entity "a_dpfifo_kca1" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/scfifo_d6a1.tdf Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_3bf.tdf
     Info (12023): Found entity 1: a_fefifo_3bf File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_fefifo_3bf.tdf Line: 24
-Info (12128): Elaborating entity "a_fefifo_3bf" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 42
+Info (12128): Elaborating entity "a_fefifo_3bf" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_di7.tdf
     Info (12023): Found entity 1: cntr_di7 File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/cntr_di7.tdf Line: 25
-Info (12128): Elaborating entity "cntr_di7" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_fefifo_3bf.tdf Line: 38
+Info (12128): Elaborating entity "cntr_di7" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|a_fefifo_3bf:fifo_state|cntr_di7:count_usedw" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_fefifo_3bf.tdf Line: 38
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_41t1.tdf
     Info (12023): Found entity 1: altsyncram_41t1 File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/altsyncram_41t1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_41t1" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 43
+Info (12128): Elaborating entity "altsyncram_41t1" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_1ib.tdf
     Info (12023): Found entity 1: cntr_1ib File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/cntr_1ib.tdf Line: 25
-Info (12128): Elaborating entity "cntr_1ib" for hierarchy "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 44
+Info (12128): Elaborating entity "cntr_1ib" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|cntr_1ib:rd_ptr_count" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_kca1.tdf Line: 44
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17036): Removed 12 MSB VCC or GND address nodes from RAM block "turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/altsyncram_41t1.tdf Line: 35
-Info (17036): Removed 12 MSB VCC or GND address nodes from RAM block "turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/altsyncram_41t1.tdf Line: 35
-Info (17036): Removed 12 MSB VCC or GND address nodes from RAM block "turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_d6a1:auto_generated|a_dpfifo_kca1:dpfifo|altsyncram_41t1:FIFOram|ALTSYNCRAM" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/altsyncram_41t1.tdf Line: 35
 Info (144001): Generated suppressed messages file C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/output_files/turbo_encoder.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 608 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 831 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 573 logic cells
-    Info (21064): Implemented 12 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 734 megabytes
-    Info: Processing ended: Thu Mar 07 11:56:38 2019
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 789 logic cells
+    Info (21064): Implemented 13 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 736 megabytes
+    Info: Processing ended: Sun Mar 24 23:36:49 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

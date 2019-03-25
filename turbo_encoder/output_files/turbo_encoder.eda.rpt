@@ -1,5 +1,5 @@
 EDA Netlist Writer report for turbo_encoder
-Thu Mar 07 11:58:06 2019
+Sun Mar 24 23:38:28 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Mar 07 11:58:06 2019 ;
+; EDA Netlist Writer Status ; Successful - Sun Mar 24 23:38:28 2019 ;
 ; Revision Name             ; turbo_encoder                         ;
 ; Top-level Entity Name     ; turbo_encoder                         ;
 ; Family                    ; Cyclone V                             ;
@@ -93,13 +93,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Mar 07 11:58:04 2019
+    Info: Processing started: Sun Mar 24 23:38:26 2019
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim/ turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file turbo_encoder.vo in folder "C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Thu Mar 07 11:58:06 2019
+    Info: Peak virtual memory: 638 megabytes
+    Info: Processing ended: Sun Mar 24 23:38:28 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

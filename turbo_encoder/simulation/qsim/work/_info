@@ -9,44 +9,86 @@ z2
 cModel Technology
 Z0 dC:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/simulation/qsim
 vturbo_encoder
-!s110 1553485110
+!s110 1553621407
 !i10b 1
-!s100 ^H0N@_[bYb;IXQPD@GBfE1
-IY=faQ^dDgaTMf?<HnbMUn2
+!s100 OS_R<MWb^11=H8djaX@<N2
+I00[f0Pl<]8gYF8;Q<GE9;1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1553485108
-8turbo_encoder.vo
-Fturbo_encoder.vo
-L0 31
-Z2 OV;L;10.5b;63
+w1553621406
+Z2 8turbo_encoder.vo
+Z3 Fturbo_encoder.vo
+Z4 L0 31
+Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z3 !s108 1553485110.000000
-!s107 turbo_encoder.vo|
-!s90 -work|work|turbo_encoder.vo|
+Z6 !s108 1553621407.000000
+Z7 !s107 turbo_encoder.vo|
+Z8 !s90 -work|work|turbo_encoder.vo|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z9 o-work work
+Z10 tCvgOpt 0
 vturbo_encoder_vlg_vec_tst
-!s110 1553485111
+!s110 1553621408
 !i10b 1
-!s100 4Z2l6FlLZMV;2iMg_7V7:3
-I`iO6]OXmYl[Em`2LQfd=_2
+!s100 575P<JhCMGZHzYTGLW<bI2
+IWD<T4AlL0fjV>g=c>hNh[1
 R1
 R0
-w1553485106
+w1553621404
 8Waveform1.vwf.vt
 FWaveform1.vwf.vt
-L0 29
-R2
+Z11 L0 29
+R5
 r1
 !s85 0
 31
-R3
+R6
 !s107 Waveform1.vwf.vt|
 !s90 -work|work|Waveform1.vwf.vt|
 !i113 1
+R9
+R10
+vturbo_fifo
+Z12 !s110 1553617964
+!i10b 1
+!s100 6f@FkW:U2M51ohGZNJG8X2
+I6Y:ejLT@5]cezgJn42XE31
+R1
+R0
+w1553617962
+R2
+R3
 R4
 R5
+r1
+!s85 0
+31
+Z13 !s108 1553617964.000000
+R7
+R8
+!i113 1
+R9
+R10
+vturbo_fifo_vlg_vec_tst
+R12
+!i10b 1
+!s100 a1kA`==hIhPaPKOi<JX:j3
+I`G`29NT=Q@:QB2n@hllWC3
+R1
+R0
+w1553617960
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+R11
+R5
+r1
+!s85 0
+31
+R13
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R9
+R10

@@ -1,13 +1,14 @@
 module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out,
 	current_state, xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl,
 	write_enc_0, write_enc_1, write_trl_0, write_trl_1, length_delay, read_enc_0, read_enc_1,
-	read_trl_0, read_trl_1);
+	read_trl_0, read_trl_1, empty, stored);
 	input clk, rst, data_valid, ck, ckp, length;
 	output xk, zk, zkp, look_now, length_out, length_delay;  
 	output reg [2:0] current_state;
 	output xk_enc, zk_enc, zkp_enc, xk_trl, zk_trl, zkp_trl, write_enc_0, write_enc_1, write_trl_0, write_trl_1;
 	output reg read_enc_0, read_enc_1, read_trl_0, read_trl_1;
-	
+	output empty;
+	output [12:0] stored;
 
 	
 	
@@ -159,6 +160,8 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 		
 	wire xk_encf0, zk_encf0, zkp_encf0, xkp_encf0, xk_trlf0, zk_trlf0, zkp_trlf0, xk_encf1, zk_encf1, zkp_encf1, xkp_encf1, xk_trlf1, zk_trlf1, zkp_trlf1;
 	
+	//output FIFOs
+	
 	turbo_fifo fifo1_enc(rst, clk, xk_enc, read_enc_0, write_enc_0, , , xk_encf0, );
 	turbo_fifo fifo2_enc(rst, clk, zk_enc, read_enc_0, write_enc_0, , , zk_encf0, );
 	turbo_fifo fifo3_enc(rst, clk, zkp_enc, read_enc_0, write_enc_0, , , zkp_encf0, );
@@ -166,7 +169,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	turbo_fifo fifo2_trl(rst, clk, zk_trl, read_trl_0, write_trl_0, , , zk_trlf0, );
 	turbo_fifo fifo3_trl(rst, clk, zkp_trl, read_trl_0, write_trl_0, , , zkp_trlf0, );
 	
-	turbo_fifo fifo1_enc_alt(rst, clk, xk_enc, read_enc_1, write_enc_1, , , xk_encf1, );
+	turbo_fifo fifo1_enc_alt(rst, clk, xk_enc, read_enc_1, write_enc_1, empty, , xk_encf1, stored);
 	turbo_fifo fifo2_enc_alt(rst, clk, zk_enc, read_enc_1, write_enc_1, , , zk_encf1, );
 	turbo_fifo fifo3_enc_alt(rst, clk, zkp_enc, read_enc_1, write_enc_1, , , zkp_encf1, );
 	turbo_fifo fifo1_trl_alt(rst, clk, xk_trl, read_trl_1, write_trl_1, , , xk_trlf1, );

@@ -3,83 +3,83 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -3.489
-TNS   : -2227.984
+Slack : -3.378
+TNS   : -2897.964
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.263
+Slack : 0.262
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'clk'
-Slack : -0.210
-TNS   : -3.112
+Slack : -0.216
+TNS   : -3.480
 
 Type  : Slow 1100mV 85C Model Removal 'clk'
-Slack : 0.652
+Slack : 0.661
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -2.636
-TNS   : -2941.747
+TNS   : -3043.267
 
 Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -3.629
-TNS   : -2116.036
+Slack : -3.481
+TNS   : -2776.952
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
 Slack : 0.248
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'clk'
-Slack : -0.148
-TNS   : -2.140
+Slack : -0.156
+TNS   : -2.446
 
 Type  : Slow 1100mV 0C Model Removal 'clk'
-Slack : 0.620
+Slack : 0.627
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -2.636
-TNS   : -2952.031
+TNS   : -3057.008
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -1.197
-TNS   : -562.655
+Slack : -1.319
+TNS   : -832.196
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.138
+Slack : 0.139
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clk'
-Slack : 0.458
+Slack : 0.457
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'clk'
-Slack : 0.293
+Slack : 0.297
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -2.174
-TNS   : -1951.773
+TNS   : -1929.304
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -1.111
-TNS   : -415.463
+Slack : -1.139
+TNS   : -620.485
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
 Slack : 0.125
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clk'
-Slack : 0.498
+Slack : 0.494
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'clk'
-Slack : 0.268
+Slack : 0.272
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -2.174
-TNS   : -1954.599
+TNS   : -1931.969
 
 ------------------------------------------------------------

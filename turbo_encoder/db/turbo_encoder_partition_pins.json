@@ -96,6 +96,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "empty",
+					"strict" : false
+				},
+				{
+					"name" : "stored[0]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[1]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[2]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[3]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[4]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[5]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[6]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[7]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[8]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[9]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[10]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[11]",
+					"strict" : false
+				},
+				{
+					"name" : "stored[12]",
+					"strict" : false
+				},
+				{
 					"name" : "ck",
 					"strict" : false
 				},

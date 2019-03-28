@@ -24,131 +24,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "current_state[0]",
-					"strict" : false
-				},
-				{
-					"name" : "current_state[1]",
-					"strict" : false
-				},
-				{
-					"name" : "current_state[2]",
-					"strict" : false
-				},
-				{
-					"name" : "xk_enc",
-					"strict" : false
-				},
-				{
-					"name" : "zk_enc",
-					"strict" : false
-				},
-				{
-					"name" : "zkp_enc",
-					"strict" : false
-				},
-				{
-					"name" : "xk_trl",
-					"strict" : false
-				},
-				{
-					"name" : "zk_trl",
-					"strict" : false
-				},
-				{
-					"name" : "zkp_trl",
-					"strict" : false
-				},
-				{
-					"name" : "write_enc_0",
-					"strict" : false
-				},
-				{
-					"name" : "write_enc_1",
-					"strict" : false
-				},
-				{
-					"name" : "write_trl_0",
-					"strict" : false
-				},
-				{
-					"name" : "write_trl_1",
-					"strict" : false
-				},
-				{
-					"name" : "length_delay",
-					"strict" : false
-				},
-				{
-					"name" : "read_enc_0",
-					"strict" : false
-				},
-				{
-					"name" : "read_enc_1",
-					"strict" : false
-				},
-				{
-					"name" : "read_trl_0",
-					"strict" : false
-				},
-				{
-					"name" : "read_trl_1",
-					"strict" : false
-				},
-				{
-					"name" : "empty",
-					"strict" : false
-				},
-				{
-					"name" : "stored[0]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[1]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[2]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[3]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[4]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[5]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[6]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[7]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[8]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[9]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[10]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[11]",
-					"strict" : false
-				},
-				{
-					"name" : "stored[12]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -156,23 +32,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "ckp",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
 					"name" : "rst",
 					"strict" : false
 				},
 				{
-					"name" : "length",
+					"name" : "ckp",
 					"strict" : false
 				},
 				{
 					"name" : "data_valid",
+					"strict" : false
+				},
+				{
+					"name" : "length",
 					"strict" : false
 				}
 			]

@@ -1,0 +1,9 @@
+
+State Machine - |turbo_encoder|current_state
+Name current_state.WAIT current_state.READENC0 current_state.READTRL1 current_state.READENC1 current_state.READTRL0 current_state.NOREAD 
+current_state.NOREAD 0 0 0 0 0 0 
+current_state.READTRL0 0 0 0 0 1 1 
+current_state.READENC1 0 0 0 1 0 1 
+current_state.READTRL1 0 0 1 0 0 1 
+current_state.READENC0 0 1 0 0 0 1 
+current_state.WAIT 1 0 0 0 0 1 

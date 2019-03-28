@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Mar 26 13:24:13 2019
+Analysis & Synthesis Status : Successful - Thu Mar 28 12:11:26 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : turbo_encoder
 Top-level Entity Name : turbo_encoder
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 805
-Total pins : 43
+Total registers : 808
+Total pins : 11
 Total virtual pins : 0
 Total block memory bits : 106,496
 Total DSP Blocks : 0

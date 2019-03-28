@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.qarlog
+
+Archive:	C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.qar
+Date:		Thu Mar 28 12:15:31 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/dffe_ref.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellshift.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/Waveform.vwf
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/Waveform1.vwf
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/Waveform2.vwf
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/bitshift.qip
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/bitshift.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/read_fsm.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.qpf
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.qsf
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.qip
+C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 17 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

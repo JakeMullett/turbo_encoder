@@ -1,5 +1,5 @@
 Analysis & Synthesis report for turbo_encoder
-Tue Mar 26 13:24:13 2019
+Thu Mar 28 12:11:26 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,9 +15,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
+ 10. State Machine - |turbo_encoder|current_state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Source assignments for turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram
  15. Source assignments for turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram
@@ -99,14 +99,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 26 13:24:13 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Mar 28 12:11:26 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; turbo_encoder                               ;
 ; Top-level Entity Name           ; turbo_encoder                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 805                                         ;
-; Total pins                      ; 43                                          ;
+; Total registers                 ; 808                                         ;
+; Total pins                      ; 11                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 106,496                                     ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -260,27 +260,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 597       ;
+; Estimate of Logic utilization (ALMs needed) ; 576       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1048      ;
+; Combinational ALUT usage for logic          ; 1023      ;
 ;     -- 7 input functions                    ; 2         ;
-;     -- 6 input functions                    ; 143       ;
-;     -- 5 input functions                    ; 71        ;
-;     -- 4 input functions                    ; 196       ;
-;     -- <=3 input functions                  ; 636       ;
+;     -- 6 input functions                    ; 126       ;
+;     -- 5 input functions                    ; 82        ;
+;     -- 4 input functions                    ; 193       ;
+;     -- <=3 input functions                  ; 620       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 805       ;
+; Dedicated logic registers                   ; 808       ;
 ;                                             ;           ;
-; I/O pins                                    ; 43        ;
+; I/O pins                                    ; 11        ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 106496    ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 818       ;
-; Total fan-out                               ; 6830      ;
-; Average fan-out                             ; 3.50      ;
+; Maximum fan-out                             ; 821       ;
+; Total fan-out                               ; 6686      ;
+; Average fan-out                             ; 3.58      ;
 +---------------------------------------------+-----------+
 
 
@@ -289,7 +289,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Entity Name     ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |turbo_encoder                                 ; 1048 (60)           ; 805 (24)                  ; 106496            ; 0          ; 43   ; 0            ; |turbo_encoder                                                                                                                          ; turbo_encoder   ; work         ;
+; |turbo_encoder                                 ; 1023 (50)           ; 808 (27)                  ; 106496            ; 0          ; 11   ; 0            ; |turbo_encoder                                                                                                                          ; turbo_encoder   ; work         ;
 ;    |encoder:encoder1|                          ; 5 (5)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1                                                                                                         ; encoder         ; work         ;
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D0                                                                                             ; dffe_ref        ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D1                                                                                             ; dffe_ref        ; work         ;
@@ -298,7 +298,7 @@ refer to the applicable agreement for further details.
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D0                                                                                             ; dffe_ref        ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D1                                                                                             ; dffe_ref        ; work         ;
 ;       |dffe_ref:D2|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D2                                                                                             ; dffe_ref        ; work         ;
-;    |fsm:control|                               ; 60 (60)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                                                              ; fsm             ; work         ;
+;    |fsm:control|                               ; 56 (56)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                                                              ; fsm             ; work         ;
 ;    |trellisterm:termination|                   ; 11 (4)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination                                                                                                  ; trellisterm     ; work         ;
 ;       |trellshift:shiftd0|                     ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0                                                                               ; trellshift      ; work         ;
 ;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component                                           ; lpm_shiftreg    ; work         ;
@@ -306,106 +306,106 @@ refer to the applicable agreement for further details.
 ;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd1|lpm_shiftreg:LPM_SHIFTREG_component                                           ; lpm_shiftreg    ; work         ;
 ;       |trellshift:shiftd2|                     ; 2 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd2                                                                               ; trellshift      ; work         ;
 ;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component                                           ; lpm_shiftreg    ; work         ;
-;    |turbo_fifo:fifo1_enc_alt|                  ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt                                                                                                 ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo1_enc_alt|                  ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt                                                                                                 ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb     ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr         ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter  ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo1_enc|                      ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc                                                                                                     ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo1_enc|                      ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc                                                                                                     ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram     ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb         ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr             ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter      ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo1_trl_alt|                  ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt                                                                                                 ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo1_trl_alt|                  ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt                                                                                                 ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb     ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr         ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter  ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo1_trl|                      ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl                                                                                                     ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo1_trl|                      ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl                                                                                                     ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram     ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb         ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr             ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo1_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter      ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo2_enc_alt|                  ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt                                                                                                 ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo2_enc_alt|                  ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt                                                                                                 ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb     ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr         ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter  ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo2_enc|                      ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc                                                                                                     ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo2_enc|                      ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc                                                                                                     ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram     ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb         ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr             ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter      ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo2_trl_alt|                  ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt                                                                                                 ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo2_trl_alt|                  ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt                                                                                                 ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb     ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr         ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter  ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo2_trl|                      ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl                                                                                                     ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo2_trl|                      ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl                                                                                                     ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram     ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb         ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr             ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo2_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter      ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo3_enc_alt|                  ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt                                                                                                 ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo3_enc_alt|                  ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt                                                                                                 ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb     ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr         ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter  ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo3_enc|                      ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc                                                                                                     ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo3_enc|                      ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc                                                                                                     ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram     ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb         ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr             ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_enc|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter      ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo3_trl_alt|                  ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt                                                                                                 ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo3_trl_alt|                  ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt                                                                                                 ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component                                                                         ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                              ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                         ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb     ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr         ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl_alt|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter  ; cntr_di7        ; work         ;
-;    |turbo_fifo:fifo3_trl|                      ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl                                                                                                     ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 70 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 70 (32)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:fifo3_trl|                      ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl                                                                                                     ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component                                                                             ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                  ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                             ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram     ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb         ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr             ; cntr_1ib        ; work         ;
 ;                |cntr_di7:usedw_counter|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:fifo3_trl|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_di7:usedw_counter      ; cntr_di7        ; work         ;
-;    |turbo_fifo:lengthfifo|                     ; 68 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo                                                                                                    ; turbo_fifo      ; work         ;
-;       |scfifo:scfifo_component|                ; 68 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component                                                                            ; scfifo          ; work         ;
-;          |scfifo_f3a1:auto_generated|          ; 68 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                 ; scfifo_f3a1     ; work         ;
-;             |a_dpfifo_m9a1:dpfifo|             ; 68 (30)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                            ; a_dpfifo_m9a1   ; work         ;
+;    |turbo_fifo:lengthfifo|                     ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo                                                                                                    ; turbo_fifo      ; work         ;
+;       |scfifo:scfifo_component|                ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component                                                                            ; scfifo          ; work         ;
+;          |scfifo_f3a1:auto_generated|          ; 69 (0)              ; 57 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated                                                 ; scfifo_f3a1     ; work         ;
+;             |a_dpfifo_m9a1:dpfifo|             ; 69 (31)             ; 57 (19)                   ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo                            ; a_dpfifo_m9a1   ; work         ;
 ;                |altsyncram_r6i1:FIFOram|       ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|altsyncram_r6i1:FIFOram    ; altsyncram_r6i1 ; work         ;
 ;                |cntr_0ib:rd_ptr_msb|           ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_0ib:rd_ptr_msb        ; cntr_0ib        ; work         ;
 ;                |cntr_1ib:wr_ptr|               ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr            ; cntr_1ib        ; work         ;
@@ -456,13 +456,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------------------------------+-----------------+
 
 
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |turbo_encoder|current_state                                                                                                                           ;
++------------------------+--------------------+------------------------+------------------------+------------------------+------------------------+----------------------+
+; Name                   ; current_state.WAIT ; current_state.READENC0 ; current_state.READTRL1 ; current_state.READENC1 ; current_state.READTRL0 ; current_state.NOREAD ;
++------------------------+--------------------+------------------------+------------------------+------------------------+------------------------+----------------------+
+; current_state.NOREAD   ; 0                  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                    ;
+; current_state.READTRL0 ; 0                  ; 0                      ; 0                      ; 0                      ; 1                      ; 1                    ;
+; current_state.READENC1 ; 0                  ; 0                      ; 0                      ; 1                      ; 0                      ; 1                    ;
+; current_state.READTRL1 ; 0                  ; 0                      ; 1                      ; 0                      ; 0                      ; 1                    ;
+; current_state.READENC0 ; 0                  ; 1                      ; 0                      ; 0                      ; 0                      ; 1                    ;
+; current_state.WAIT     ; 1                  ; 0                      ; 0                      ; 0                      ; 0                      ; 1                    ;
++------------------------+--------------------+------------------------+------------------------+------------------------+------------------------+----------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                                                          ;
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 ; Register name                                                                          ; Reason for Removal                                                                                 ;
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 ; trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ; Merged with trellisterm:termination|trellshift:shiftd2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[3] ;
-; Total Number of Removed Registers = 1                                                  ;                                                                                                    ;
+; current_state~10                                                                       ; Lost fanout                                                                                        ;
+; current_state~11                                                                       ; Lost fanout                                                                                        ;
+; current_state~12                                                                       ; Lost fanout                                                                                        ;
+; Total Number of Removed Registers = 4                                                  ;                                                                                                    ;
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 
 
@@ -471,24 +489,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 805   ;
-; Number of registers using Synchronous Clear  ; 36    ;
+; Total registers                              ; 808   ;
+; Number of registers using Synchronous Clear  ; 37    ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 758   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 542   ;
+; Number of registers using Clock Enable       ; 543   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; current_state[2]~reg0                  ; 15      ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -496,10 +504,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 7:1                ; 14 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |turbo_encoder|length_counter[4]             ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |turbo_encoder|fsm:control|current_state[1]  ;
-; 14:1               ; 14 bits   ; 126 LEs       ; 0 LEs                ; 126 LEs                ; Yes        ; |turbo_encoder|fsm:control|length_counter[3] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |turbo_encoder|zk                            ;
+; 6:1                ; 14 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |turbo_encoder|length_counter[0]             ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |turbo_encoder|fsm:control|current_state[0]  ;
+; 14:1               ; 14 bits   ; 126 LEs       ; 0 LEs                ; 126 LEs                ; Yes        ; |turbo_encoder|fsm:control|length_counter[5] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |turbo_encoder|zkp                           ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |turbo_encoder|current_state                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
@@ -630,6 +639,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; READENC1       ; 2     ; Signed Integer                                       ;
 ; READTRL1       ; 3     ; Signed Integer                                       ;
 ; NOREAD         ; 4     ; Signed Integer                                       ;
+; WAIT           ; 5     ; Signed Integer                                       ;
 +----------------+-------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1239,13 +1249,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "turbo_fifo:fifo1_enc_alt" ;
-+------+--------+----------+---------------------------+
-; Port ; Type   ; Severity ; Details                   ;
-+------+--------+----------+---------------------------+
-; full ; Output ; Info     ; Explicitly unconnected    ;
-+------+--------+----------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "turbo_fifo:fifo1_enc_alt"                                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; full  ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; usedw ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -1379,33 +1391,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 805                         ;
+; arriav_ff             ; 808                         ;
 ;     CLR               ; 241                         ;
 ;     CLR SLD           ; 4                           ;
-;     ENA               ; 1                           ;
+;     ENA               ; 2                           ;
 ;     ENA CLR           ; 513                         ;
 ;     ENA SCLR          ; 28                          ;
-;     SCLR              ; 8                           ;
+;     SCLR              ; 9                           ;
 ;     SLD               ; 1                           ;
-;     plain             ; 9                           ;
-; arriav_lcell_comb     ; 1050                        ;
+;     plain             ; 10                          ;
+; arriav_lcell_comb     ; 1023                        ;
 ;     arith             ; 522                         ;
 ;         1 data inputs ; 366                         ;
 ;         2 data inputs ; 156                         ;
 ;     extend            ; 2                           ;
 ;         7 data inputs ; 2                           ;
-;     normal            ; 526                         ;
-;         1 data inputs ; 16                          ;
-;         2 data inputs ; 66                          ;
-;         3 data inputs ; 34                          ;
-;         4 data inputs ; 196                         ;
-;         5 data inputs ; 71                          ;
-;         6 data inputs ; 143                         ;
-; boundary_port         ; 43                          ;
+;     normal            ; 499                         ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 193                         ;
+;         5 data inputs ; 82                          ;
+;         6 data inputs ; 126                         ;
+; boundary_port         ; 11                          ;
 ; stratixv_ram_block    ; 13                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.88                        ;
+; Average LUT depth     ; 1.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1424,7 +1436,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Mar 26 13:23:53 2019
+    Info: Processing started: Thu Mar 28 12:11:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1438,17 +1450,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /users/eap42/documents/ece559/project/turbo_encoder/encoder/dffe_ref.v
     Info (12023): Found entity 1: dffe_ref File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/dffe_ref.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(162): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 162
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(163): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 163
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(164): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 164
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(165): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 165
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(166): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 166
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(167): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 167
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(168): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 168
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(169): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 169
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(170): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 170
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(171): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 171
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(172): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 172
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(173): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 173
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(174): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 174
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(175): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 175
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(176): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 176
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(177): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 177
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_encoder.v
     Info (12023): Found entity 1: turbo_encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_fifo.v
@@ -1457,24 +1470,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file read_fs
     Info (12023): Found entity 1: read_fsm File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/read_fsm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bitshift.v
     Info (12023): Found entity 1: bitshift File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/bitshift.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at turbo_encoder.v(23): created implicit net for "xkp_enc" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 23
 Info (12127): Elaborating entity "turbo_encoder" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(85): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 85
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(90): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 90
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(96): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 96
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(103): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 103
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(105): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 105
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(114): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 114
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(116): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 116
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(122): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 122
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(131): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 131
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(133): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 133
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(142): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 142
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(144): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 144
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(150): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 150
-Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 22
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(100): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 100
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(111): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 111
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(128): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 128
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(139): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 139
+Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 13
 Info (12128): Elaborating entity "dffe_ref" for hierarchy "encoder:encoder1|dffe_ref:D2" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 23
-Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 25
+Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 16
 Warning (10036): Verilog HDL or VHDL warning at trellisterm.v(7): object "alt" assigned a value but never read File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v Line: 7
 Info (12128): Elaborating entity "trellshift" for hierarchy "trellisterm:termination|trellshift:shiftd0" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v Line: 29
 Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellshift.v Line: 70
@@ -1483,7 +1486,7 @@ Info (12133): Instantiated megafunction "trellisterm:termination|trellshift:shif
     Info (12134): Parameter "lpm_direction" = "RIGHT"
     Info (12134): Parameter "lpm_type" = "LPM_SHIFTREG"
     Info (12134): Parameter "lpm_width" = "4"
-Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 27
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 18
 Warning (10230): Verilog HDL assignment warning at fsm.v(32): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 32
 Warning (10230): Verilog HDL assignment warning at fsm.v(41): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 41
 Warning (10230): Verilog HDL assignment warning at fsm.v(53): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 53
@@ -1497,7 +1500,7 @@ Warning (10230): Verilog HDL assignment warning at fsm.v(105): truncated value w
 Warning (10230): Verilog HDL assignment warning at fsm.v(112): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 112
 Warning (10230): Verilog HDL assignment warning at fsm.v(119): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 119
 Warning (10230): Verilog HDL assignment warning at fsm.v(127): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 127
-Info (12128): Elaborating entity "turbo_fifo" for hierarchy "turbo_fifo:lengthfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 61
+Info (12128): Elaborating entity "turbo_fifo" for hierarchy "turbo_fifo:lengthfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 52
 Info (12128): Elaborating entity "scfifo" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
 Info (12130): Elaborated megafunction instantiation "turbo_fifo:lengthfifo|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
 Info (12133): Instantiated megafunction "turbo_fifo:lengthfifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
@@ -1533,20 +1536,21 @@ Info (12128): Elaborating entity "cntr_di7" for hierarchy "turbo_fifo:lengthfifo
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_1ib.tdf
     Info (12023): Found entity 1: cntr_1ib File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/cntr_1ib.tdf Line: 25
 Info (12128): Elaborating entity "cntr_1ib" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component|scfifo_f3a1:auto_generated|a_dpfifo_m9a1:dpfifo|cntr_1ib:wr_ptr" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/db/a_dpfifo_m9a1.tdf Line: 59
-Warning (12241): 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/output_files/turbo_encoder.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1273 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1216 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 37 output pins
-    Info (21061): Implemented 1217 logic cells
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 1192 logic cells
     Info (21064): Implemented 13 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
     Info: Peak virtual memory: 740 megabytes
-    Info: Processing ended: Tue Mar 26 13:24:13 2019
-    Info: Elapsed time: 00:00:20
+    Info: Processing ended: Thu Mar 28 12:11:26 2019
+    Info: Elapsed time: 00:00:22
     Info: Total CPU time (on all processors): 00:00:26
 
 

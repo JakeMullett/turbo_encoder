@@ -1,5 +1,5 @@
 Assembler report for turbo_encoder
-Tue Mar 26 13:25:34 2019
+Thu Mar 28 12:12:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Mar 26 13:25:34 2019 ;
+; Assembler Status      ; Successful - Thu Mar 28 12:12:38 2019 ;
 ; Revision Name         ; turbo_encoder                         ;
 ; Top-level Entity Name ; turbo_encoder                         ;
 ; Family                ; Cyclone V                             ;
@@ -66,8 +66,8 @@ refer to the applicable agreement for further details.
 +----------------+-------------------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                                     ;
 +----------------+-------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x009F05F4                                                                                                  ;
-; Checksum       ; 0x009F05F4                                                                                                  ;
+; JTAG usercode  ; 0x009E0E9E                                                                                                  ;
+; Checksum       ; 0x009E0E9E                                                                                                  ;
 +----------------+-------------------------------------------------------------------------------------------------------------+
 
 
@@ -77,13 +77,13 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Mar 26 13:25:27 2019
+    Info: Processing started: Thu Mar 28 12:12:31 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 744 megabytes
-    Info: Processing ended: Tue Mar 26 13:25:34 2019
+    Info: Peak virtual memory: 741 megabytes
+    Info: Processing ended: Thu Mar 28 12:12:38 2019
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:06
 

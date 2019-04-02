@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "03/28/2019 12:13:37"
+// Generated on "04/01/2019 22:53:43"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          turbo_encoder
 // 
@@ -81,12 +81,10 @@ end
 initial
 begin
 	ck = 1'b0;
-	ck = #70000 1'b1;
+	ck = #110000 1'b1;
 	ck = #40000 1'b0;
 	ck = #20000 1'b1;
-	ck = #20000 1'b0;
-	ck = #40000 1'b1;
-	ck = #40000 1'b0;
+	ck = #60000 1'b0;
 	ck = #20000 1'b1;
 	ck = #20000 1'b0;
 end 
@@ -95,12 +93,12 @@ end
 initial
 begin
 	ckp = 1'b0;
-	ckp = #90000 1'b1;
-	ckp = #40000 1'b0;
-	ckp = #20000 1'b1;
+	ckp = #70000 1'b1;
 	ckp = #40000 1'b0;
 	ckp = #20000 1'b1;
 	ckp = #20000 1'b0;
+	ckp = #60000 1'b1;
+	ckp = #40000 1'b0;
 end 
 
 // data_valid
@@ -109,7 +107,7 @@ begin
 	data_valid = 1'b0;
 	data_valid = #50000 1'b1;
 	data_valid = #20000 1'b0;
-	data_valid = #60000 1'b1;
+	data_valid = #100000 1'b1;
 	data_valid = #20000 1'b0;
 end 
 
@@ -117,8 +115,8 @@ end
 initial
 begin
 	length = 1'b0;
-	length = #150000 1'b1;
-	length = #130000 1'b0;
+	length = #70000 1'b1;
+	length = #120000 1'b0;
 end 
 endmodule
 

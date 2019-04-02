@@ -5,25 +5,29 @@ length => length.IN2
 data_valid => data_valid.IN1
 ck => ck.IN1
 ckp => ckp.IN1
-xk <= xk.DB_MAX_OUTPUT_PORT_TYPE
-zk <= zk.DB_MAX_OUTPUT_PORT_TYPE
-zkp <= zkp.DB_MAX_OUTPUT_PORT_TYPE
-look_now <= look_now.DB_MAX_OUTPUT_PORT_TYPE
-length_out <= turbo_fifo:lengthfifo.port7
+xk << xk.DB_MAX_OUTPUT_PORT_TYPE
+zk << zk.DB_MAX_OUTPUT_PORT_TYPE
+zkp << zkp.DB_MAX_OUTPUT_PORT_TYPE
+look_now << look_now.DB_MAX_OUTPUT_PORT_TYPE
+length_out << turbo_fifo:lengthfifo.port7
 
 
 |turbo_encoder|encoder:encoder1
 clr => clr.IN3
 enable => enable.IN3
 u => switch.DATAB
+u => D2in.DATAB
+u => bottom.DATAB
 clk => clk.IN3
 top <= switch.DB_MAX_OUTPUT_PORT_TYPE
-bottom <= xorGate0.DB_MAX_OUTPUT_PORT_TYPE
+bottom <= bottom.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= dffe_ref:D0.q
 Q[1] <= dffe_ref:D1.q
 Q[2] <= dffe_ref:D2.q
 mod_clr => D1in.OUTPUTSELECT
 mod_clr => D0in.OUTPUTSELECT
+mod_clr => D2in.OUTPUTSELECT
+mod_clr => bottom.OUTPUTSELECT
 
 
 |turbo_encoder|encoder:encoder1|dffe_ref:D2
@@ -54,14 +58,18 @@ clr => q~reg0.ACLR
 clr => clr.IN3
 enable => enable.IN3
 u => switch.DATAB
+u => D2in.DATAB
+u => bottom.DATAB
 clk => clk.IN3
 top <= switch.DB_MAX_OUTPUT_PORT_TYPE
-bottom <= xorGate0.DB_MAX_OUTPUT_PORT_TYPE
+bottom <= bottom.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= dffe_ref:D0.q
 Q[1] <= dffe_ref:D1.q
 Q[2] <= dffe_ref:D2.q
 mod_clr => D1in.OUTPUTSELECT
 mod_clr => D0in.OUTPUTSELECT
+mod_clr => D2in.OUTPUTSELECT
+mod_clr => bottom.OUTPUTSELECT
 
 
 |turbo_encoder|encoder:encoder2|dffe_ref:D2
@@ -323,6 +331,15 @@ clk => length_counter[10].CLK
 clk => length_counter[11].CLK
 clk => length_counter[12].CLK
 clk => length_counter[13].CLK
+length_flag => Add0.IN25
+length_flag => Add1.IN23
+length_flag => Add3.IN25
+length_flag => Add0.IN26
+length_flag => Add1.IN24
+length_flag => Add3.IN26
+length_flag => Add0.IN27
+length_flag => Add1.IN25
+length_flag => Add3.IN27
 length_flag => Add0.IN28
 length_flag => Add1.IN26
 length_flag => Add3.IN28

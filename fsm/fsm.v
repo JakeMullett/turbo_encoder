@@ -25,7 +25,7 @@ module fsm(
 
 	wire[13:0] length;
 
-	assign length = length_flag ? 13'd6 : 13'd4; //changed for testing purposes
+	assign length = length_flag ? 13'd6144 : 13'd1056; //changed for testing purposes
 	
 	initial begin
 		length_counter <= 0;
@@ -82,6 +82,16 @@ module fsm(
 						if (length_counter < 3) begin
 							mod_clr <= 0;
 							length_counter <= length_counter + 1;
+							if (length_counter == length - 2) begin
+								trellis_enable <= 1;
+							end
+						end else if (trellis_enable) begin
+							length_counter <= 0;
+							enable <= 0;
+							trellis_enable <= 0;
+							clr <= 1;
+							current_state <= TERMINATE;
+							switch <= 1;
 						end else begin
 							switch <= 0;
 							trellis_enable <= 0;
@@ -98,7 +108,7 @@ module fsm(
 							end
 						end else begin
 							if (data_valid) begin
-								clr <= 1;
+								mod_clr <= 1;
 								length_counter <= 0;
 								enable <= 1;
 								trellis_enable <= 0;

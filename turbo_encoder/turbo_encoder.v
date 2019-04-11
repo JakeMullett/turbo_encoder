@@ -64,6 +64,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	parameter WAIT = 5;
 	
 	wire[13:0] code_length;
+	wire empty, empty_alt;
 	assign code_length = length_delay ? 13'd6144 : 13'd1056; //changed for testing purposes
 	
 	//FIFO Read FSM
@@ -159,7 +160,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	
 	//output FIFOs
 	
-	wire empty, empty_alt;
+	
 	
 	turbo_fifo fifo1_enc(rst, clk, xk_enc, read_enc_0, write_enc_0, empty, , xk_encf0,);
 	turbo_fifo fifo2_enc(rst, clk, zk_enc, read_enc_0, write_enc_0, , , zk_encf0, );

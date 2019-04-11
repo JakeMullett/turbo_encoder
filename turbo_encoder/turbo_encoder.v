@@ -3,14 +3,9 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	output xk, zk, zkp, look_now, length_out;
 	output [2:0] currstate;
 
-	
-<<<<<<< HEAD
-	wire clear, trl_clr, mod_clr, switch, trl_enable, enc_enable;
-	wire [2:0] dff_q, dff_p;
-=======
 	wire clear, trl_clr, switch, trl_enable, enc_enable, mod_clr;
 	wire [2:0] dff_q, dff_p, currstate;
->>>>>>> ea02b6a3ab687f142d1924515f8c6658796efcec
+
 	wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
 	wire length_delay;
 	assign length_out = length_delay;

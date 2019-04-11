@@ -5,7 +5,7 @@ input clr, enable, u, clk, mod_clr;
 output top, bottom;
 output [2:0] Q;
 
-wire switch, D2in, xorQ1Q0, xorD2Q2; 
+wire switch, D2in, xorQ1Q0, xorD2Q2, temp, temp1; 
 
 // the enable signal is the switch 
 
@@ -13,12 +13,14 @@ assign switch = enable ? u : xorQ1Q0;
 
 assign top = switch;
 
-xor xorGate2(D2in,switch,xorQ1Q0);
+xor xorGate2(temp,switch,xorQ1Q0);
 
 wire D1in, D0in;
 
 assign D1in = mod_clr ? 1'b0 : Q[2];
 assign D0in = mod_clr ? 1'b0 : Q[1];
+assign D2in = mod_clr ? u : temp;
+assign bottom = mod_clr ? u : temp1;
 
 dffe_ref D2(.q(Q[2]), .d(D2in), .clk(clk), .en(enable), .clr(clr));
 
@@ -27,7 +29,7 @@ xor xorGate1(xorD2Q2,D2in,Q[2]);
 dffe_ref D1(.q(Q[1]), .d(D1in), .clk(clk), .en(enable), .clr(clr));
 dffe_ref D0(.q(Q[0]), .d(D0in), .clk(clk), .en(enable), .clr(clr));
 
-xor xorGate0(bottom,xorD2Q2,Q[0]);
+xor xorGate0(temp1,xorD2Q2,Q[0]);
 xor xorGate3(xorQ1Q0,Q[0],Q[1]);
 
 endmodule

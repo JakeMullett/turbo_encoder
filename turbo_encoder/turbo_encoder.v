@@ -4,8 +4,13 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	output [2:0] currstate;
 
 	
+<<<<<<< HEAD
 	wire clear, trl_clr, mod_clr, switch, trl_enable, enc_enable;
 	wire [2:0] dff_q, dff_p;
+=======
+	wire clear, trl_clr, switch, trl_enable, enc_enable, mod_clr;
+	wire [2:0] dff_q, dff_p, currstate;
+>>>>>>> ea02b6a3ab687f142d1924515f8c6658796efcec
 	wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
 	wire length_delay;
 	assign length_out = length_delay;
@@ -64,7 +69,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	parameter WAIT = 5;
 	
 	wire[13:0] code_length;
-	assign code_length = length_delay ? 13'd6 : 13'd4; //changed for testing purposes
+	assign code_length = length_delay ? 13'd6144 : 13'd1056; //changed for testing purposes
 	
 	//FIFO Read FSM
 	
@@ -115,7 +120,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 						read_enc_0 <= 1;
 						length_counter <= 0;
 						read_length <= 1;
-						if (~enc_enable) begin
+						if (empty) begin
 							current_state <= NOREAD;
 							read_trl_1 <= 0;
 							read_enc_0 <= 0;
@@ -143,7 +148,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 						read_enc_1 <= 1;
 						length_counter <= 0;
 						read_length <= 1;
-						if (~enc_enable) begin
+						if (empty_alt) begin
 							current_state <= NOREAD;
 							read_trl_0 <= 0;
 							read_enc_1 <= 0;
@@ -159,14 +164,16 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	
 	//output FIFOs
 	
-	turbo_fifo fifo1_enc(rst, clk, xk_enc, read_enc_0, write_enc_0, , , xk_encf0,);
+	wire empty, empty_alt;
+	
+	turbo_fifo fifo1_enc(rst, clk, xk_enc, read_enc_0, write_enc_0, empty, , xk_encf0,);
 	turbo_fifo fifo2_enc(rst, clk, zk_enc, read_enc_0, write_enc_0, , , zk_encf0, );
 	turbo_fifo fifo3_enc(rst, clk, zkp_enc, read_enc_0, write_enc_0, , , zkp_encf0, );
 	turbo_fifo fifo1_trl(rst, clk, xk_trl, read_trl_0, write_trl_0, , , xk_trlf0, );
 	turbo_fifo fifo2_trl(rst, clk, zk_trl, read_trl_0, write_trl_0, , , zk_trlf0, );
 	turbo_fifo fifo3_trl(rst, clk, zkp_trl, read_trl_0, write_trl_0, , , zkp_trlf0, );
 	
-	turbo_fifo fifo1_enc_alt(rst, clk, xk_enc, read_enc_1, write_enc_1, , , xk_encf1,);
+	turbo_fifo fifo1_enc_alt(rst, clk, xk_enc, read_enc_1, write_enc_1, empty_alt, , xk_encf1,);
 	turbo_fifo fifo2_enc_alt(rst, clk, zk_enc, read_enc_1, write_enc_1, , , zk_encf1, );
 	turbo_fifo fifo3_enc_alt(rst, clk, zkp_enc, read_enc_1, write_enc_1, , , zkp_encf1, );
 	turbo_fifo fifo1_trl_alt(rst, clk, xk_trl, read_trl_1, write_trl_1, , , xk_trlf1, );

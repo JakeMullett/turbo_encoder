@@ -1,12 +1,13 @@
-module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out);
+module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out, currstate);
 	input clk, rst, data_valid, ck, ckp, length;
 	output xk, zk, zkp, look_now, length_out;
+	output [2:0] currstate;
 
 	
 	wire clear, trl_clr, mod_clr, switch, trl_enable, enc_enable;
-	wire [2:0] dff_q, dff_p, currstate;
+	wire [2:0] dff_q, dff_p;
 	wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
-	
+	wire length_delay;
 	assign length_out = length_delay;
 	
 	
@@ -43,15 +44,14 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	assign write_enc_1 = write_alt_enc & enc_enable;
 	assign write_trl_0 = ~write_alt_trl & switch;
 	assign write_trl_1 = write_alt_trl & switch;
-		
-	wire length_delay;
 	
 	wire em, fl;
 	wire [12:0] usedw;
+	reg read_length;
 	
 	turbo_fifo lengthfifo(rst, clk, length, read_length, (enc_enable|data_valid), em, fl, length_delay, usedw);
 	
-	reg read_length;
+	
 		
 	reg [2:0] current_state;
 	reg[13:0] length_counter;

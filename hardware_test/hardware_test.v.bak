@@ -1,0 +1,12 @@
+module hardware_test(clk, rst, start_test, correct, look_now);
+	input clk, rst, start_test;
+	output correct, look_now;
+	
+	encoder_rom	c_k(count, enable, clk, ck)
+	
+	
+	
+	
+	turbo_encoder	encoder(clk, rst, length, data_valid, ck, ckp, xk, zk, zkp, look_now, length_out); 
+
+endmodule

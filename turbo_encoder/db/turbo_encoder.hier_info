@@ -5,11 +5,20 @@ length => length.IN2
 data_valid => data_valid.IN1
 ck => ck.IN1
 ckp => ckp.IN1
-xk << xk.DB_MAX_OUTPUT_PORT_TYPE
-zk << zk.DB_MAX_OUTPUT_PORT_TYPE
-zkp << zkp.DB_MAX_OUTPUT_PORT_TYPE
-look_now << look_now.DB_MAX_OUTPUT_PORT_TYPE
-length_out << turbo_fifo:lengthfifo.port7
+xk <= xk.DB_MAX_OUTPUT_PORT_TYPE
+zk <= zk.DB_MAX_OUTPUT_PORT_TYPE
+zkp <= zkp.DB_MAX_OUTPUT_PORT_TYPE
+look_now <= look_now.DB_MAX_OUTPUT_PORT_TYPE
+length_out <= turbo_fifo:lengthfifo.port7
+currstate[0] <= fsm:control.current_state
+currstate[1] <= fsm:control.current_state
+currstate[2] <= fsm:control.current_state
+dff_q[0] <= dff_q[0].DB_MAX_OUTPUT_PORT_TYPE
+dff_q[1] <= dff_q[1].DB_MAX_OUTPUT_PORT_TYPE
+dff_q[2] <= dff_q[2].DB_MAX_OUTPUT_PORT_TYPE
+dff_p[0] <= dff_p[0].DB_MAX_OUTPUT_PORT_TYPE
+dff_p[1] <= dff_p[1].DB_MAX_OUTPUT_PORT_TYPE
+dff_p[2] <= dff_p[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |turbo_encoder|encoder:encoder1
@@ -331,15 +340,6 @@ clk => length_counter[10].CLK
 clk => length_counter[11].CLK
 clk => length_counter[12].CLK
 clk => length_counter[13].CLK
-length_flag => Add0.IN25
-length_flag => Add1.IN23
-length_flag => Add3.IN25
-length_flag => Add0.IN26
-length_flag => Add1.IN24
-length_flag => Add3.IN26
-length_flag => Add0.IN27
-length_flag => Add1.IN25
-length_flag => Add3.IN27
 length_flag => Add0.IN28
 length_flag => Add1.IN26
 length_flag => Add3.IN28

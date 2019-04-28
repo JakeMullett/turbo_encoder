@@ -1,13 +1,12 @@
-module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out, currstate);
+module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now, length_out);
 	input clk, rst, data_valid, ck, ckp, length;
 	output xk, zk, zkp, look_now, length_out;
-	output [2:0] currstate;
 
+	
 	wire clear, trl_clr, switch, trl_enable, enc_enable, mod_clr;
 	wire [2:0] dff_q, dff_p, currstate;
-
 	wire xk_enc, zk_enc, zkp_enc, xkp_enc, xk_trl, zk_trl, zkp_trl;
-	wire length_delay;
+	
 	assign length_out = length_delay;
 	
 	
@@ -44,14 +43,15 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	assign write_enc_1 = write_alt_enc & enc_enable;
 	assign write_trl_0 = ~write_alt_trl & switch;
 	assign write_trl_1 = write_alt_trl & switch;
+		
+	wire length_delay;
 	
 	wire em, fl;
 	wire [12:0] usedw;
-	reg read_length;
 	
 	turbo_fifo lengthfifo(rst, clk, length, read_length, (enc_enable|data_valid), em, fl, length_delay, usedw);
 	
-	
+	reg read_length;
 		
 	reg [2:0] current_state;
 	reg[13:0] length_counter;
@@ -64,8 +64,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	parameter WAIT = 5;
 	
 	wire[13:0] code_length;
-	wire empty, empty_alt;
-	assign code_length = length_delay ? 13'd6144 : 13'd1056; //changed for testing purposes
+	assign code_length = length_delay ? 13'd6 : 13'd4; //changed for testing purposes
 	
 	//FIFO Read FSM
 	
@@ -160,7 +159,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	
 	//output FIFOs
 	
-	
+	wire empty, empty_alt;
 	
 	turbo_fifo fifo1_enc(rst, clk, xk_enc, read_enc_0, write_enc_0, empty, , xk_encf0,);
 	turbo_fifo fifo2_enc(rst, clk, zk_enc, read_enc_0, write_enc_0, , , zk_encf0, );

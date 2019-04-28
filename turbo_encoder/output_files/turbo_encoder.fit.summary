@@ -1,17 +1,17 @@
-Fitter Status : Successful - Mon Apr 01 23:04:21 2019
+Fitter Status : Successful - Sun Apr 28 15:55:44 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : turbo_encoder
 Top-level Entity Name : turbo_encoder
 Family : Cyclone V
-Device : 5CEBA2F23C7
+Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 569 / 9,430 ( 6 % )
-Total registers : 938
-Total pins : 11 / 224 ( 5 % )
+Logic utilization (in ALMs) : 586 / 18,480 ( 3 % )
+Total registers : 946
+Total pins : 20 / 224 ( 9 % )
 Total virtual pins : 0
-Total block memory bits : 106,496 / 1,802,240 ( 6 % )
-Total RAM Blocks : 13 / 176 ( 7 % )
-Total DSP Blocks : 0 / 25 ( 0 % )
+Total block memory bits : 106,496 / 3,153,920 ( 3 % )
+Total RAM Blocks : 13 / 308 ( 4 % )
+Total DSP Blocks : 0 / 66 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

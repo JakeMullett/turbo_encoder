@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "correct",
+					"strict" : false
+				},
+				{
+					"name" : "look_now",
+					"strict" : false
+				},
+				{
+					"name" : "enc_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "enc_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "enc_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "check[0]",
+					"strict" : false
+				},
+				{
+					"name" : "check[1]",
+					"strict" : false
+				},
+				{
+					"name" : "check[2]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "start_test",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

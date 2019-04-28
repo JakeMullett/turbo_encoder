@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "04/01/2019 22:53:43"
+// Generated on "04/28/2019 15:56:49"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          turbo_encoder
 // 
@@ -36,6 +36,9 @@ reg data_valid;
 reg length;
 reg rst;
 // wires                                               
+wire [2:0] currstate;
+wire [2:0] dff_p;
+wire [2:0] dff_q;
 wire length_out;
 wire look_now;
 wire xk;
@@ -48,7 +51,10 @@ turbo_encoder i1 (
 	.ck(ck),
 	.ckp(ckp),
 	.clk(clk),
+	.currstate(currstate),
 	.data_valid(data_valid),
+	.dff_p(dff_p),
+	.dff_q(dff_q),
 	.length(length),
 	.length_out(length_out),
 	.look_now(look_now),
@@ -81,10 +87,12 @@ end
 initial
 begin
 	ck = 1'b0;
-	ck = #110000 1'b1;
+	ck = #70000 1'b1;
 	ck = #40000 1'b0;
 	ck = #20000 1'b1;
-	ck = #60000 1'b0;
+	ck = #20000 1'b0;
+	ck = #40000 1'b1;
+	ck = #40000 1'b0;
 	ck = #20000 1'b1;
 	ck = #20000 1'b0;
 end 
@@ -93,12 +101,12 @@ end
 initial
 begin
 	ckp = 1'b0;
-	ckp = #70000 1'b1;
+	ckp = #90000 1'b1;
+	ckp = #40000 1'b0;
+	ckp = #20000 1'b1;
 	ckp = #40000 1'b0;
 	ckp = #20000 1'b1;
 	ckp = #20000 1'b0;
-	ckp = #60000 1'b1;
-	ckp = #40000 1'b0;
 end 
 
 // data_valid
@@ -107,7 +115,7 @@ begin
 	data_valid = 1'b0;
 	data_valid = #50000 1'b1;
 	data_valid = #20000 1'b0;
-	data_valid = #100000 1'b1;
+	data_valid = #60000 1'b1;
 	data_valid = #20000 1'b0;
 end 
 
@@ -115,7 +123,7 @@ end
 initial
 begin
 	length = 1'b0;
-	length = #70000 1'b1;
+	length = #150000 1'b1;
 	length = #120000 1'b0;
 end 
 endmodule

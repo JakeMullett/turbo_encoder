@@ -64,7 +64,7 @@ module turbo_encoder(clk, rst, length, data_valid,ck, ckp, xk, zk, zkp, look_now
 	parameter WAIT = 5;
 	
 	wire[13:0] code_length;
-	assign code_length = length_delay ? 13'd6 : 13'd4; //changed for testing purposes
+	assign code_length = length_delay ? 13'd6144 : 13'd1056; //changed for testing purposes
 	
 	//FIFO Read FSM
 	

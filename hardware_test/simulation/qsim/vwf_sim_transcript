@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off hardware_test -c hardware_test --vector_source="C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/Waveform.vwf" --testbench_file="C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off hardware_test -c hardware_test --vector_source="C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/Waveform2.vwf" --testbench_file="C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/Waveform2.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,8 +25,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Apr 28 19:18:52 2019
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off hardware_test -c hardware_test --vector_source=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/Waveform.vwf --testbench_file=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/Waveform.vwf.vt
+    Info: Processing started: Mon Apr 29 08:06:06 2019
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off hardware_test -c hardware_test --vector_source=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/Waveform2.vwf --testbench_file=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/Waveform2.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Apr 28 19:18:54 2019
+    Info: Processing started: Mon Apr 29 08:06:08 2019
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/ hardware_test -c hardware_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file hardware_test.vo in folder "C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 641 megabytes
-    Info: Processing ended: Sun Apr 28 19:18:56 2019
+    Info: Peak virtual memory: 639 megabytes
+    Info: Processing ended: Mon Apr 29 08:06:10 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
@@ -77,14 +77,15 @@ c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do hardware_test.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
+
 
 # do hardware_test.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
+
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:18:58 on Apr 28,2019
+# Start time: 08:06:13 on Apr 29,2019
 # vlog -work work hardware_test.vo 
 
 # -- Compiling module hardware_test
@@ -92,22 +93,22 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # 
 # Top level modules:
 # 	hardware_test
-
-# End time: 19:18:59 on Apr 28,2019, Elapsed time: 0:00:01
+# End time: 08:06:14 on Apr 29,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:18:59 on Apr 28,2019
-# vlog -work work Waveform.vwf.vt 
+# Start time: 08:06:14 on Apr 29,2019
+# vlog -work work Waveform2.vwf.vt 
 
 # -- Compiling module hardware_test_vlg_vec_tst
 # 
 # Top level modules:
 # 	hardware_test_vlg_vec_tst
-# End time: 19:18:59 on Apr 28,2019, Elapsed time: 0:00:00
+# End time: 08:06:14 on Apr 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.hardware_test_vlg_vec_tst 
-# Start time: 19:18:59 on Apr 28,2019
+# Start time: 08:06:15 on Apr 29,2019
 # Loading work.hardware_test_vlg_vec_tst
 # Loading work.hardware_test
 # Loading cyclonev_ver.cyclonev_io_obuf
@@ -123,30 +124,68 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim_ver.common_28nm_ram_register
 # Loading altera_lnsim_ver.common_28nm_ram_pulse_generator
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 12631 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 12427 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-
 # after#25
 
 # Simulation time: 0 ps
 
-# ** Note: $finish    : Waveform.vwf.vt(54)
-#    Time: 1 us  Iteration: 0  Instance: /hardware_test_vlg_vec_tst
+# Simulation time: 0 ps
 
-# End time: 19:19:03 on Apr 28,2019, Elapsed time: 0:00:04
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 27870000 ps
+
+# Simulation time: 68330000 ps
+
+# Simulation time: 68330000 ps
+
+# Simulation time: 68330000 ps
+
+# Simulation time: 68330000 ps
+
+# Simulation time: 68330000 ps
+
+# ** Note: $finish    : Waveform2.vwf.vt(54)
+#    Time: 100 us  Iteration: 0  Instance: /hardware_test_vlg_vec_tst
+# End time: 08:07:10 on Apr 29,2019, Elapsed time: 0:00:55
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/Waveform.vwf...
+Reading C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/Waveform2.vwf...
 
 Reading C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/hardware_test.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/hardware_test_20190428191904.sim.vwf
+Writing the resulting VWF to C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/hardware_test/simulation/qsim/hardware_test_20190429080710.sim.vwf
 
 Finished VCD to VWF conversion.
 

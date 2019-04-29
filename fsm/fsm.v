@@ -25,7 +25,7 @@ module fsm(
 
 	wire[13:0] length;
 
-	assign length = length_flag ? 13'd6 : 13'd4; //changed for testing purposes
+	assign length = length_flag ? 13'd6144 : 13'd1056; //changed for testing purposes
 	
 	initial begin
 		length_counter <= 0;

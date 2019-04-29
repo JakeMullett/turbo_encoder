@@ -21,14 +21,14 @@ start_test => stall.OUTPUTSELECT
 start_test => stall.OUTPUTSELECT
 start_test => stall.OUTPUTSELECT
 start_test => go.OUTPUTSELECT
-correct << correct.DB_MAX_OUTPUT_PORT_TYPE
-look_now << turbo_encoder:encoder.port9
-enc_out[0] << turbo_encoder:encoder.port6
-enc_out[1] << turbo_encoder:encoder.port7
-enc_out[2] << turbo_encoder:encoder.port8
-check[0] << correctness_rom:check_rom.port3
-check[1] << correctness_rom:check_rom.port3
-check[2] << correctness_rom:check_rom.port3
+correct <= correct.DB_MAX_OUTPUT_PORT_TYPE
+look_now <= turbo_encoder:encoder.port9
+enc_out[0] <= turbo_encoder:encoder.port6
+enc_out[1] <= turbo_encoder:encoder.port7
+enc_out[2] <= turbo_encoder:encoder.port8
+check[0] <= correctness_rom:check_rom.port3
+check[1] <= correctness_rom:check_rom.port3
+check[2] <= correctness_rom:check_rom.port3
 
 
 |hardware_test|encoder_rom:c_k
@@ -615,6 +615,15 @@ clk => length_counter[10].CLK
 clk => length_counter[11].CLK
 clk => length_counter[12].CLK
 clk => length_counter[13].CLK
+length_flag => Add0.IN25
+length_flag => Add1.IN23
+length_flag => Add3.IN25
+length_flag => Add0.IN26
+length_flag => Add1.IN24
+length_flag => Add3.IN26
+length_flag => Add0.IN27
+length_flag => Add1.IN25
+length_flag => Add3.IN27
 length_flag => Add0.IN28
 length_flag => Add1.IN26
 length_flag => Add3.IN28

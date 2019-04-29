@@ -1,5 +1,5 @@
 Analysis & Synthesis report for turbo_encoder
-Sun Apr 28 15:54:31 2019
+Mon Apr 29 00:15:28 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -65,14 +65,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  57. Port Connectivity Checks: "turbo_fifo:fifo2_enc"
  58. Port Connectivity Checks: "turbo_fifo:fifo1_enc"
  59. Port Connectivity Checks: "turbo_fifo:lengthfifo"
- 60. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"
- 61. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd1"
- 62. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd0"
- 63. Port Connectivity Checks: "encoder:encoder2"
- 64. Post-Synthesis Netlist Statistics for Top Partition
- 65. Elapsed Time Per Partition
- 66. Analysis & Synthesis Messages
- 67. Analysis & Synthesis Suppressed Messages
+ 60. Port Connectivity Checks: "fsm:control"
+ 61. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"
+ 62. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd1"
+ 63. Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd0"
+ 64. Port Connectivity Checks: "encoder:encoder2"
+ 65. Post-Synthesis Netlist Statistics for Top Partition
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
+ 68. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -98,14 +99,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Apr 28 15:54:31 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 29 00:15:28 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; turbo_encoder                               ;
 ; Top-level Entity Name           ; turbo_encoder                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 808                                         ;
-; Total pins                      ; 20                                          ;
+; Total pins                      ; 11                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 106,496                                     ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -261,16 +262,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Estimate of Logic utilization (ALMs needed) ; 585       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1041      ;
+; Combinational ALUT usage for logic          ; 1042      ;
 ;     -- 7 input functions                    ; 1         ;
 ;     -- 6 input functions                    ; 127       ;
-;     -- 5 input functions                    ; 96        ;
-;     -- 4 input functions                    ; 196       ;
-;     -- <=3 input functions                  ; 621       ;
+;     -- 5 input functions                    ; 97        ;
+;     -- 4 input functions                    ; 197       ;
+;     -- <=3 input functions                  ; 620       ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 808       ;
 ;                                             ;           ;
-; I/O pins                                    ; 20        ;
+; I/O pins                                    ; 11        ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 106496    ;
 ;                                             ;           ;
@@ -278,8 +279,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 821       ;
-; Total fan-out                               ; 6790      ;
-; Average fan-out                             ; 3.57      ;
+; Total fan-out                               ; 6779      ;
+; Average fan-out                             ; 3.60      ;
 +---------------------------------------------+-----------+
 
 
@@ -288,7 +289,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Entity Name     ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |turbo_encoder                                 ; 1041 (51)           ; 808 (27)                  ; 106496            ; 0          ; 20   ; 0            ; |turbo_encoder                                                                                                                          ; turbo_encoder   ; work         ;
+; |turbo_encoder                                 ; 1042 (51)           ; 808 (27)                  ; 106496            ; 0          ; 11   ; 0            ; |turbo_encoder                                                                                                                          ; turbo_encoder   ; work         ;
 ;    |encoder:encoder1|                          ; 6 (6)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1                                                                                                         ; encoder         ; work         ;
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D0                                                                                             ; dffe_ref        ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder1|dffe_ref:D1                                                                                             ; dffe_ref        ; work         ;
@@ -297,7 +298,7 @@ refer to the applicable agreement for further details.
 ;       |dffe_ref:D0|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D0                                                                                             ; dffe_ref        ; work         ;
 ;       |dffe_ref:D1|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D1                                                                                             ; dffe_ref        ; work         ;
 ;       |dffe_ref:D2|                            ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|encoder:encoder2|dffe_ref:D2                                                                                             ; dffe_ref        ; work         ;
-;    |fsm:control|                               ; 60 (60)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                                                              ; fsm             ; work         ;
+;    |fsm:control|                               ; 61 (61)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|fsm:control                                                                                                              ; fsm             ; work         ;
 ;    |trellisterm:termination|                   ; 9 (2)               ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination                                                                                                  ; trellisterm     ; work         ;
 ;       |trellshift:shiftd0|                     ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0                                                                               ; trellshift      ; work         ;
 ;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |turbo_encoder|trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component                                           ; lpm_shiftreg    ; work         ;
@@ -503,7 +504,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 6:1                ; 14 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |turbo_encoder|length_counter[2]             ;
+; 6:1                ; 14 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |turbo_encoder|length_counter[3]             ;
 ; 15:1               ; 14 bits   ; 140 LEs       ; 0 LEs                ; 140 LEs                ; Yes        ; |turbo_encoder|fsm:control|length_counter[4] ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |turbo_encoder|zk                            ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |turbo_encoder|current_state                 ;
@@ -1333,6 +1334,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fsm:control"                                                                                 ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; current_state ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "trellisterm:termination|trellshift:shiftd2"                                            ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1387,20 +1397,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 11                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 1041                        ;
+; arriav_lcell_comb     ; 1042                        ;
 ;     arith             ; 522                         ;
 ;         1 data inputs ; 366                         ;
 ;         2 data inputs ; 156                         ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 518                         ;
+;     normal            ; 519                         ;
 ;         1 data inputs ; 14                          ;
-;         2 data inputs ; 47                          ;
+;         2 data inputs ; 46                          ;
 ;         3 data inputs ; 38                          ;
-;         4 data inputs ; 196                         ;
-;         5 data inputs ; 96                          ;
+;         4 data inputs ; 197                         ;
+;         5 data inputs ; 97                          ;
 ;         6 data inputs ; 127                         ;
-; boundary_port         ; 20                          ;
+; boundary_port         ; 11                          ;
 ; stratixv_ram_block    ; 13                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
@@ -1423,7 +1433,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 28 15:54:11 2019
+    Info: Processing started: Mon Apr 29 00:15:07 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1437,18 +1447,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /users/eap42/documents/ece559/project/turbo_encoder/encoder/dffe_ref.v
     Info (12023): Found entity 1: dffe_ref File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/dffe_ref.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(164): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 164
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(165): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 165
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(166): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 166
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(167): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 167
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(168): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 168
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(169): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 169
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(170): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 170
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(171): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 171
+Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(172): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 172
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(173): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 173
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(174): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 174
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(175): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 175
 Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(176): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 176
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(177): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 177
-Warning (10275): Verilog HDL Module Instantiation warning at turbo_encoder.v(178): ignored dangling comma in List of Port Connections File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 178
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_encoder.v
     Info (12023): Found entity 1: turbo_encoder File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file turbo_fifo.v
@@ -1458,13 +1468,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file read_fs
 Info (12021): Found 1 design units, including 1 entities, in source file bitshift.v
     Info (12023): Found entity 1: bitshift File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/bitshift.v Line: 39
 Info (12127): Elaborating entity "turbo_encoder" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(102): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 102
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(113): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 113
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(130): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 130
-Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(141): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 141
-Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 15
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(100): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 100
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(111): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 111
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(128): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 128
+Warning (10230): Verilog HDL assignment warning at turbo_encoder.v(139): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 139
+Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder1" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 13
 Info (12128): Elaborating entity "dffe_ref" for hierarchy "encoder:encoder1|dffe_ref:D2" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/encoder/encoder.v Line: 25
-Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 18
+Info (12128): Elaborating entity "trellisterm" for hierarchy "trellisterm:termination" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 16
 Warning (10036): Verilog HDL or VHDL warning at trellisterm.v(7): object "alt" assigned a value but never read File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v Line: 7
 Info (12128): Elaborating entity "trellshift" for hierarchy "trellisterm:termination|trellshift:shiftd0" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellisterm.v Line: 29
 Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "trellisterm:termination|trellshift:shiftd0|lpm_shiftreg:LPM_SHIFTREG_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/trellis/trellshift.v Line: 70
@@ -1473,7 +1483,7 @@ Info (12133): Instantiated megafunction "trellisterm:termination|trellshift:shif
     Info (12134): Parameter "lpm_direction" = "RIGHT"
     Info (12134): Parameter "lpm_type" = "LPM_SHIFTREG"
     Info (12134): Parameter "lpm_width" = "4"
-Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 20
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:control" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 18
 Warning (10230): Verilog HDL assignment warning at fsm.v(32): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 32
 Warning (10230): Verilog HDL assignment warning at fsm.v(41): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 41
 Warning (10230): Verilog HDL assignment warning at fsm.v(53): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 53
@@ -1488,7 +1498,7 @@ Warning (10230): Verilog HDL assignment warning at fsm.v(115): truncated value w
 Warning (10230): Verilog HDL assignment warning at fsm.v(122): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 122
 Warning (10230): Verilog HDL assignment warning at fsm.v(129): truncated value with size 32 to match size of target (14) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 129
 Warning (10230): Verilog HDL assignment warning at fsm.v(137): truncated value with size 32 to match size of target (3) File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/fsm/fsm.v Line: 137
-Info (12128): Elaborating entity "turbo_fifo" for hierarchy "turbo_fifo:lengthfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 54
+Info (12128): Elaborating entity "turbo_fifo" for hierarchy "turbo_fifo:lengthfifo" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_encoder.v Line: 52
 Info (12128): Elaborating entity "scfifo" for hierarchy "turbo_fifo:lengthfifo|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
 Info (12130): Elaborated megafunction instantiation "turbo_fifo:lengthfifo|scfifo:scfifo_component" File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
 Info (12133): Instantiated megafunction "turbo_fifo:lengthfifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/turbo_fifo.v Line: 82
@@ -1530,16 +1540,16 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/eap42/Documents/ECE559/Project/turbo_encoder/turbo_encoder/output_files/turbo_encoder.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1243 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1235 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 1210 logic cells
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 1211 logic cells
     Info (21064): Implemented 13 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 746 megabytes
-    Info: Processing ended: Sun Apr 28 15:54:31 2019
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 743 megabytes
+    Info: Processing ended: Mon Apr 29 00:15:28 2019
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+

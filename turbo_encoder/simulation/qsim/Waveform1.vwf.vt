@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "04/28/2019 15:56:49"
+// Generated on "04/28/2019 23:14:25"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          turbo_encoder
 // 
@@ -36,9 +36,6 @@ reg data_valid;
 reg length;
 reg rst;
 // wires                                               
-wire [2:0] currstate;
-wire [2:0] dff_p;
-wire [2:0] dff_q;
 wire length_out;
 wire look_now;
 wire xk;
@@ -51,10 +48,7 @@ turbo_encoder i1 (
 	.ck(ck),
 	.ckp(ckp),
 	.clk(clk),
-	.currstate(currstate),
 	.data_valid(data_valid),
-	.dff_p(dff_p),
-	.dff_q(dff_q),
 	.length(length),
 	.length_out(length_out),
 	.look_now(look_now),
